@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HelicopterContollerBT : MonoBehaviour {
@@ -9,7 +6,8 @@ public class HelicopterContollerBT : MonoBehaviour {
 	[SerializeField] private float enginePower;
 	[SerializeField] private float rotationForce;
 	private void Update() {
-		rigidbody.AddForce(transform.up * enginePower * Input.GetAxis("Vertical") * Time.deltaTime);
+		rigidbody.AddForce(transform.up * enginePower * Mathf.Clamp(Input.GetAxis("Vertical") * Time.deltaTime, 0, 1.5f));
+		Debug.Log(transform.up * enginePower * Input.GetAxis("Vertical") * Time.deltaTime);
 		transform.Rotate(Vector3.back * rotationForce * Input.GetAxis("Horizontal") * Time.deltaTime);
 	}
 }

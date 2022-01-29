@@ -488,4 +488,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1987116343}
   enginePower: 750
-  rotationForce: 10
+  rotationForce: 25
