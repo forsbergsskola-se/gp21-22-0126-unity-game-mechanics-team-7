@@ -17,4 +17,5 @@ public class CommandContainer : MonoBehaviour {
 	//Teleporting
 	public bool teleportBehindTargetCommand;
 	public bool chargedTeleportCommand;
+	public bool chargedTeleportUpCommand;
 }
