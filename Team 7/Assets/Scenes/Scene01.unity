@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1850250585}
-  smoothTime: 0.2
+  smoothTime: 0.15
 --- !u!1 &1328072483
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +600,18 @@ PrefabInstance:
     - target: {fileID: 2681273689579087495, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681273689579087497, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: chargeTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681273689579087497, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: maximumJumpForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681273689579087497, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: minimumJumpForce
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2681273689579087499, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_Name
