@@ -12,10 +12,10 @@ public class PlayerWalkController : MonoBehaviour {
 		commandContainer = GetComponentInChildren<CommandContainer>();
 		anim = GetComponentInChildren<Animator>();
 	}
-
 	private void Update() => HandleWalking();
 	private void HandleWalking() {
 		rigidbody.velocity = new Vector3(commandContainer.walkCommand * moveSpeed, rigidbody.velocity.y, 0);
+		// Sets animation to walk only when moving.
 		anim.SetInteger("Walk", rigidbody.velocity.x != 0 ? 1 : 0);
 	}
 }

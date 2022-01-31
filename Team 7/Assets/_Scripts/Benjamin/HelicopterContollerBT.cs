@@ -21,7 +21,7 @@ public class HelicopterContollerBT : MonoBehaviour {
 		HoverSelector();
 	}
 	private void HoverSelector() {
-
+		// Switches the flight mode from basic flight to hover when space is pressed.
 		switch (commandContainer.hoverCommand) {
 			case true when !isHovering:
 				rigidbody.velocity = Vector3.zero;
@@ -34,7 +34,9 @@ public class HelicopterContollerBT : MonoBehaviour {
 				break;
 		}
 		if (isHovering) {
+			// Hover movement.
 			rigidbody.velocity = new Vector3(commandContainer.walkCommand * 5, 0, 0);
+			// Plays flying animation.
 			anim.SetBool("jump", true);
 		}
 		else {
@@ -42,17 +44,19 @@ public class HelicopterContollerBT : MonoBehaviour {
 		}
 	}
 	private void Rotate() {
+		// Rotates player using rigidbody
 		angleVeloctiy = new Vector3(0, 0, rotationForce * -commandContainer.flyRotateCommand);
-		Quaternion deltaRoation = Quaternion.Euler(angleVeloctiy * Time.deltaTime);
-		rigidbody.MoveRotation(rigidbody.rotation * deltaRoation);
-		// transform.Rotate(Vector3.back * commandContainer.flyRotateCommand * rotationForce * Time.deltaTime);
+		Quaternion deltaRotation = Quaternion.Euler(angleVeloctiy * Time.deltaTime);
+		rigidbody.MoveRotation(rigidbody.rotation * deltaRotation);
 	}
 	private void MoveVertically() {
-		if (!isHovering) {
-			rigidbody.AddForce(transform.up * Mathf.Clamp(commandContainer.flyCommand, 0, 1) * enginePower * Time.deltaTime);
-			if (commandContainer.flyCommand > 0) {
-				anim.SetBool("jump", true);
-			}
+		// Moves player up in the air.
+		if (isHovering)
+			return;
+		rigidbody.AddForce(transform.up * Mathf.Clamp(commandContainer.flyCommand, 0, 1) * enginePower * Time.deltaTime);
+		if (commandContainer.flyCommand > 0) {
+			// Plays flying animation.
+			anim.SetBool("jump", true);
 		}
 	}
 }
