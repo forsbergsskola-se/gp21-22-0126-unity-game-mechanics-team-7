@@ -557,30 +557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2681273689579087490, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
-      propertyPath: m_Height
-      value: 1.6187086
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681273689579087490, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
-      propertyPath: m_Radius
-      value: 0.5091072
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681273689579087490, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
-      propertyPath: m_Center.x
-      value: -0.031187952
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681273689579087490, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
-      propertyPath: m_Center.y
-      value: 0.17203283
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681273689579087492, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
-      propertyPath: m_Constraints
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681273689579087492, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2681273689579087495, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -624,10 +600,6 @@ PrefabInstance:
     - target: {fileID: 2681273689579087495, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681273689579087497, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
-      propertyPath: maximumJumpForce
-      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2681273689579087499, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_Name

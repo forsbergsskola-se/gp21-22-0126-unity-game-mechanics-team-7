@@ -1,12 +1,19 @@
+using System;
 using UnityEngine;
 
 public class HelicopterContollerBT : MonoBehaviour {
-
-	public new Rigidbody rigidbody;
-	private bool isHovering;
+	
 	[SerializeField] private float enginePower;
 	[SerializeField] private float rotationForce;
-	private void Update() {
+	private CommandContainer commandContainer;
+	private new Rigidbody rigidbody;
+	private bool isHovering;
+
+	private void Start() {
+		rigidbody = GetComponent<Rigidbody>();
+		commandContainer = GetComponentInChildren<CommandContainer>();
+	}
+	private void FixedUpdate() {
 		VerticalMovement();
 		Rotation();
 
@@ -21,11 +28,11 @@ public class HelicopterContollerBT : MonoBehaviour {
 		}
 	}
 	private void Rotation() {
-		transform.Rotate(Vector3.back * rotationForce * Input.GetAxis("Horizontal") * Time.deltaTime);
+		transform.Rotate(Vector3.back * commandContainer.flyRotateCommand * rotationForce * Time.deltaTime);
 	}
 	private void VerticalMovement() {
 		if (!isHovering) {
-			rigidbody.AddForce(transform.up * enginePower * Mathf.Clamp(Input.GetAxis("Vertical") * Time.deltaTime, 0, 1.5f));
+			rigidbody.AddForce(transform.up * commandContainer.flyCommand * enginePower * Time.deltaTime);
 		}
 	}
 }

@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkCommand: 0
+  flyCommand: 0
+  flyRotateCommand: 0
   jumpCommand: 0
   jumpCommandDown: 0
   jumpCommandUp: 0
@@ -72,8 +74,9 @@ GameObject:
   - component: {fileID: 2681273689579087495}
   - component: {fileID: 2681273689579087497}
   - component: {fileID: 2681273689579087496}
-  - component: {fileID: 2681273689579087492}
   - component: {fileID: 2681273689579087493}
+  - component: {fileID: 6655846176048482793}
+  - component: {fileID: 2681273689579087492}
   - component: {fileID: 2681273689579087490}
   m_Layer: 0
   m_Name: Player
@@ -112,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimumJumpForce: 100
-  maximumJumpForce: 300
+  maximumJumpForce: 500
   chargeTime: 1
 --- !u!114 &2681273689579087496
 MonoBehaviour:
@@ -121,28 +124,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2681273689579087499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64b015ec4561c504fb33896360587e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!54 &2681273689579087492
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2681273689579087499}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 120
-  m_CollisionDetection: 0
 --- !u!114 &2681273689579087493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +147,36 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &6655846176048482793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681273689579087499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e163f6bbf55f44d97bf36228273830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enginePower: 1000
+  rotationForce: 15
+--- !u!54 &2681273689579087492
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681273689579087499}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 56
+  m_CollisionDetection: 0
 --- !u!136 &2681273689579087490
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -170,10 +187,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6827117
-  m_Height: 1.6632228
+  m_Radius: 0.5091072
+  m_Height: 1.6187086
   m_Direction: 1
-  m_Center: {x: 0.06674278, y: 0.02513671, z: 0}
+  m_Center: {x: -0.031187952, y: 0.17203283, z: 0}
 --- !u!1001 &4241864058696975946
 PrefabInstance:
   m_ObjectHideFlags: 0
