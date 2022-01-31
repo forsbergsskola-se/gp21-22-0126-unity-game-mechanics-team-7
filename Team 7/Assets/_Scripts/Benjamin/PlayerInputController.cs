@@ -5,10 +5,11 @@ public class PlayerInputController : MonoBehaviour {
 	private CommandContainer commandContainer;
 	private float walkInput;
 	private float flyInput;
-	private float flyRotate;
+	private float flyRotateInput;
 	private bool jumpInputDown;
 	private bool jumpInputUp;
 	private bool jumpInput;
+	private bool hoverInput;
 
 	private void Start() {
 		commandContainer = GetComponent<CommandContainer>();
@@ -23,7 +24,8 @@ public class PlayerInputController : MonoBehaviour {
 		jumpInputUp = Input.GetButtonUp("Jump");
 		jumpInput = Input.GetButton("Jump");
 		flyInput = Input.GetAxis("Vertical");
-		flyRotate = Input.GetAxis("Horizontal");
+		flyRotateInput = Input.GetAxis("Horizontal");
+		hoverInput = Input.GetButtonDown("Jump");
 	}
 
 	private void SetCommands() {
@@ -32,6 +34,7 @@ public class PlayerInputController : MonoBehaviour {
 		commandContainer.jumpCommandUp = jumpInputUp;
 		commandContainer.jumpCommand = jumpInput;
 		commandContainer.flyCommand = flyInput;
-		commandContainer.flyRotateCommand = flyRotate;
+		commandContainer.flyRotateCommand = flyRotateInput;
+		commandContainer.hoverCommand = hoverInput;
 	}
 }

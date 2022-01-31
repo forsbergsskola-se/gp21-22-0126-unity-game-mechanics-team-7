@@ -11,7 +11,6 @@ public class PlayerWalkController : MonoBehaviour {
 		rigidbody = GetComponent<Rigidbody>();
 		commandContainer = GetComponentInChildren<CommandContainer>();
 		anim = GetComponentInChildren<Animator>();
-
 	}
 
 	private void Update() => HandleWalking();
