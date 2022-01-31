@@ -10,9 +10,9 @@ public class PlayerInputController : MonoBehaviour {
 	private bool jumpInputUp;
 	private bool jumpInput;
 	private bool hoverInput;
-	 bool teleportBehindTargetInput;
-	 bool chargedTeleportInput;
-	 bool chargedTeleportUpInput;
+	private bool teleportBehindTargetInput;
+	private bool chargedTeleportInput;
+	private bool chargedTeleportUpInput;
 
 	private void Start() {
 		commandContainer = GetComponent<CommandContainer>();

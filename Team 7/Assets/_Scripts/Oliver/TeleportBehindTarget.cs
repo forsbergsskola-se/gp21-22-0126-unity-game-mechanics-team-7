@@ -12,7 +12,7 @@ public class TeleportBehindTarget : MonoBehaviour{
    [SerializeField] LayerMask targetMask;
 
 
-   bool canTeleport = true;
+   private bool canTeleport = true;
    
    void Awake(){
       commandContainer = GetComponentInChildren<CommandContainer>();
@@ -49,7 +49,7 @@ var targetTransform = target.transform;
       }
       else if (distanceToTarget > 0){
          isBehindTarget = false;
-         tempTeleportOffset = -teleportOffset;
+         tempTeleportOffset = new Vector3(-teleportOffset.x,teleportOffset.y,teleportOffset.z);
       }
       
       if (dotProduct < 0){
