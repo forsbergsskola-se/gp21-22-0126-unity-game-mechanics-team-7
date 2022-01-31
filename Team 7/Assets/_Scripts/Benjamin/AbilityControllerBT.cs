@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 // Controls Abilities
-public class AbilityController : MonoBehaviour {
+public class AbilityControllerBT : MonoBehaviour {
 	
 	private void Update() {
 		// Enable Walk 
