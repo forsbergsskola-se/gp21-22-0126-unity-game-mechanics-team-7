@@ -36,14 +36,32 @@ public class TeleportBehindTarget : MonoBehaviour{
 
    void Teleport(RaycastHit target){
 var targetTransform = target.transform;
-      Debug.Log(Vector3.Dot(transform.right,targetTransform.right ));
-      
-      if (Vector3.Dot(transform.right,targetTransform.right) < 0){
-         transform.position = targetTransform.position - teleportOffset;
+      Debug.Log(Vector3.Dot(transform.right,targetTransform.forward ));
+      var dotProduct = Vector3.Dot(transform.right, targetTransform.forward);
+      var distanceToTarget = Vector3.Distance(transform.position, targetTransform.position);
+
+      var tempTeleportOffset = teleportOffset;
+      Debug.Log(distanceToTarget);
+      var isBehindTarget = false;
+      if (distanceToTarget < 0){
+         isBehindTarget = true;
+         
       }
-      else if (Vector3.Dot(transform.right,targetTransform.right) > 0){
-         transform.position = targetTransform.position + teleportOffset;
+      else if (distanceToTarget > 0){
+         isBehindTarget = false;
+         tempTeleportOffset = -teleportOffset;
+      }
+      
+      if (dotProduct < 0){
+
+         transform.position = targetTransform.position + tempTeleportOffset;
+         
+         //transform.position = new Vector3(targetTransform.position.x + dotProduct* 5, transform.position.y, transform.position.z);
          transform.Rotate(0,180,0);
+      }
+      else if (dotProduct > 0){
+        // transform.position = new Vector3(targetTransform.position.x + dotProduct* 5, transform.position.y, transform.position.z);
+         transform.position = targetTransform.position + tempTeleportOffset;
       }
 
 
