@@ -33,7 +33,7 @@ public class PlayerInputController : MonoBehaviour {
 		flyRotateInput = Input.GetAxis("Horizontal");
 		hoverInput = Input.GetButtonDown("Jump");
 		//Teleportation
-		teleportBehindTargetInput = Input.GetKeyDown(KeyCode.E);
+		teleportBehindTargetInput = Input.GetKey(KeyCode.E);
 		chargedTeleportInput = Input.GetKey(KeyCode.LeftShift);
 		chargedTeleportUpInput = Input.GetKeyUp(KeyCode.LeftShift);
 	}
