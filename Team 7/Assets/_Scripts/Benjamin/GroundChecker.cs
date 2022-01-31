@@ -12,6 +12,7 @@ public class GroundChecker : MonoBehaviour {
 		IsGrounded = Physics.SphereCast(ray, groundCheckRadius, groundCheckLength, groundLayers);
 	}
 
+	// Visualises Ground Checker
 	private void OnDrawGizmos() {
 		Gizmos.DrawSphere(transform.position + Vector3.down * groundCheckLength, groundCheckRadius);
 	}

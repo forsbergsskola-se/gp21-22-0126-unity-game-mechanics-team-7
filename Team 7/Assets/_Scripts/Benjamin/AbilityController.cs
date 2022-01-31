@@ -1,15 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState : MonoBehaviour {
-	
-	private new Rigidbody rigidbody;
 
-	private void Start() {
-		rigidbody = GetComponent<Rigidbody>();
-	}
+// Controls Abilities
+public class AbilityController : MonoBehaviour {
+	
 	private void Update() {
 		// Enable Walk 
 		if (Input.GetKeyDown(KeyCode.Alpha1)) {

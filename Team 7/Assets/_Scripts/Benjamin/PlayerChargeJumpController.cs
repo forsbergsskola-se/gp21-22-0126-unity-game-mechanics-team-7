@@ -18,15 +18,18 @@ public class PlayerChargeJumpController : MonoBehaviour
         groundChecker = GetComponent<GroundChecker>();
         anim = GetComponentInChildren<Animator>();
     }
-    void Update() => HandleChargeJump();
+    private void Update() => HandleChargeJump();
+    // Increases jump charge after time.
     private void HandleChargeJump() {
         if (commandContainer.jumpCommand && groundChecker.IsGrounded) {
             jumpCharge += Time.deltaTime / chargeTime;
         }
+        // Releases jump and related charge stored.
         if (commandContainer.jumpCommandUp && groundChecker.IsGrounded) {
             var jumpForce = Mathf.Lerp(minimumJumpForce, maximumJumpForce, jumpCharge);
             rigidbody.AddForce(Vector3.up * jumpForce);
             jumpCharge = 0f;
+            // Plays jump animation.
             anim.SetBool("jump", true);
         }
     }
