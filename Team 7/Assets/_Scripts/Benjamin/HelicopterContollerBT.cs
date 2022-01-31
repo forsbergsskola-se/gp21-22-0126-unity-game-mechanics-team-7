@@ -9,12 +9,14 @@ public class HelicopterContollerBT : MonoBehaviour {
 	private new Rigidbody rigidbody;
 	private bool isHovering = false;
 	private Vector3 angleVeloctiy;
+	private Animator anim;
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
 		commandContainer = GetComponentInChildren<CommandContainer>();
+		anim = GetComponentInChildren<Animator>();
 	}
-	private void LateUpdate() {
+	private void Update() {
 		MoveVertically();
 		HoverSelector();
 	}
@@ -33,6 +35,7 @@ public class HelicopterContollerBT : MonoBehaviour {
 		}
 		if (isHovering) {
 			rigidbody.velocity = new Vector3(commandContainer.walkCommand * 5, 0, 0);
+			anim.SetBool("jump", true);
 		}
 		else {
 			Rotate();
@@ -47,6 +50,9 @@ public class HelicopterContollerBT : MonoBehaviour {
 	private void MoveVertically() {
 		if (!isHovering) {
 			rigidbody.AddForce(transform.up * Mathf.Clamp(commandContainer.flyCommand, 0, 1) * enginePower * Time.deltaTime);
+			if (commandContainer.flyCommand > 0) {
+				anim.SetBool("jump", true);
+			}
 		}
 	}
 }
