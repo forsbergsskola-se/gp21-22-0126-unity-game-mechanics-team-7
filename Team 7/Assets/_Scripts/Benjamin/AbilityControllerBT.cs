@@ -16,7 +16,23 @@ public class AbilityControllerBT : MonoBehaviour {
 			EnableFly();
 			DisableWalk();
 			DisableJump();
+			DisableSwimming();
 		}
+
+		if (Input.GetKey(KeyCode.Alpha3)) {
+			DisableWalk();
+			DisableJump();
+			DisableFly();
+			EnableSwimming();
+		}
+	}
+
+	private void EnableSwimming() {
+		GetComponent<SwimController>().enabled = true;
+	}
+
+	private void DisableSwimming() {
+		GetComponent<SwimController>().enabled = false;
 	}
 
 	private void EnableWalk() {
