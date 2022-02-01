@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class HelicopterContollerBT : MonoBehaviour {
+public class FlightContollerBT : MonoBehaviour {
 	
 	[SerializeField] private float enginePower;
 	[SerializeField] private float rotationForce;

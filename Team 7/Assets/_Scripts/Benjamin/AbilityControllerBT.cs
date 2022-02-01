@@ -32,9 +32,9 @@ public class AbilityControllerBT : MonoBehaviour {
 		GetComponent<PlayerChargeJumpController>().enabled = false;
 	}
 	private void EnableFly() {
-		GetComponent<HelicopterContollerBT>().enabled = true;
+		GetComponent<FlightContollerBT>().enabled = true;
 	}
 	private void DisableFly() {
-		GetComponent<HelicopterContollerBT>().enabled = false;
+		GetComponent<FlightContollerBT>().enabled = false;
 	}
 }
