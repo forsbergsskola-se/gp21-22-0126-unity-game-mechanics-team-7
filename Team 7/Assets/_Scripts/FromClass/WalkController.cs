@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerWalkController : MonoBehaviour {
+public class WalkController : MonoBehaviour {
 	
 	[SerializeField] private float moveSpeed;
 	private CommandContainer commandContainer;

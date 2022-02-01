@@ -20,10 +20,10 @@ public class AbilityControllerBT : MonoBehaviour {
 	}
 
 	private void EnableWalk() {
-		GetComponent<PlayerWalkController>().enabled = true;
+		GetComponent<WalkController>().enabled = true;
 	}
 	private void DisableWalk() {
-		GetComponent<PlayerWalkController>().enabled = false;
+		GetComponent<WalkController>().enabled = false;
 	}
 	private void EnableJump() {
 		GetComponent<PlayerChargeJumpController>().enabled = true;
