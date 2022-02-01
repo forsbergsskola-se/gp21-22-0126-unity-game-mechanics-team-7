@@ -55,6 +55,8 @@ MonoBehaviour:
   teleportBehindTargetCommand: 0
   chargedTeleportCommand: 0
   chargedTeleportUpCommand: 0
+  swimCommandHorizontal: 0
+  swimCommandVertical: 0
 --- !u!114 &2681273688648574096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,11 +210,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2681273689579087499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f72275f559494802bdd2ed8af5bf2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swimHorizontalSpeed: 10
+  swimVerticalSpeed: 6
 --- !u!54 &2681273689579087492
 Rigidbody:
   m_ObjectHideFlags: 0
