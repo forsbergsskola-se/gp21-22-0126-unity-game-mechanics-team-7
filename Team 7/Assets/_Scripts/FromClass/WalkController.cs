@@ -23,13 +23,11 @@ public class WalkController : MonoBehaviour {
 	}
 
 	void RotateWhenMoving(){
-		if (commandContainer.walkCommand > 0 && !isLookingRight){
-			transform.Rotate(0, 180, 0);
-			isLookingRight = true;
+		if (commandContainer.walkCommand > 0 ){
+			transform.rotation = new Quaternion(0, 0, 0, 0);
 		}
-		else if (commandContainer.walkCommand < 0 && isLookingRight){
-			transform.Rotate(0, 180, 0);
-			isLookingRight = false;
+		else if (commandContainer.walkCommand < 0){
+			transform.rotation = new Quaternion(0, 180, 0, 0);
 		}
 	}
 }
