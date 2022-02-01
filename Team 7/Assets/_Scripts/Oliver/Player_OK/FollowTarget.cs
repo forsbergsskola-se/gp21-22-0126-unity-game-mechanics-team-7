@@ -27,5 +27,9 @@ public class FollowTarget : MonoBehaviour{
         
         
     }
-    
+
+
+    void OnDrawGizmos(){
+        Gizmos.DrawWireSphere(transform.position,aggroRange);
+    }
 }
