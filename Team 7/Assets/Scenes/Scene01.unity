@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &515914742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2681273689579087499, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+  m_PrefabInstance: {fileID: 2681273688065504222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +400,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1850250585}
   smoothTime: 0.15
+--- !u!1 &1135311351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1553991042791506, guid: d2edcf95960b81249bf3f4a30ad1a908, type: 3}
+  m_PrefabInstance: {fileID: 1818966201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1328072483
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +551,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4886101968738366, guid: d2edcf95960b81249bf3f4a30ad1a908, type: 3}
   m_PrefabInstance: {fileID: 1818966201}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1722586860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135311351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec8fdef2aed3fb4e882a771779e3748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {fileID: 11400000, guid: f35f394b6f8e6504989410f442db2ec7, type: 2}
 --- !u!1001 &1818966201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,6 +686,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2681273689579087495, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
   m_PrefabInstance: {fileID: 2681273688065504222}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1850250594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515914742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339ebe765975efb44be7ff8b270fd3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionSo: {fileID: 11400000, guid: f35f394b6f8e6504989410f442db2ec7, type: 2}
 --- !u!1 &1968732896
 GameObject:
   m_ObjectHideFlags: 0
