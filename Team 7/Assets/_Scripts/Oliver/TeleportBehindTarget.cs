@@ -10,6 +10,7 @@ public class TeleportBehindTarget : MonoBehaviour{
    [SerializeField] Vector3 teleportOffset;
    [SerializeField] CommandContainer commandContainer;
    [SerializeField] LayerMask targetMask;
+   [SerializeField] bool isAi;
 
 
    private bool canTeleport = true;
@@ -21,23 +22,29 @@ public class TeleportBehindTarget : MonoBehaviour{
 
    void Update(){
 
+      if (isAi && canTeleport){
+         DetectTargetThenTeleport();
+      }
+      else
       if (commandContainer.teleportBehindTargetCommand&& canTeleport){
-         RaycastHit hit;
-         Debug.DrawRay(transform.position,transform.right * teleportRange, Color.red);
-         if (Physics.Raycast(transform.position, transform.right, out hit, teleportRange, targetMask)){
-          Teleport(hit); 
-         }
+         DetectTargetThenTeleport();
          // var targetPosition = hit.transform.right;
          // Debug.Log(Vector3.Dot(targetPosition, transform.right));
+      }
+   }
 
-
+   void DetectTargetThenTeleport(){
+      RaycastHit hit;
+      Debug.DrawRay(transform.position, transform.right * teleportRange, Color.red);
+      if (Physics.Raycast(transform.position, transform.right, out hit, teleportRange, targetMask)){
+         Teleport(hit);
       }
    }
 
    void Teleport(RaycastHit target){
 var targetTransform = target.transform;
-      Debug.Log(Vector3.Dot(transform.right,targetTransform.forward ));
-      var dotProduct = Vector3.Dot(transform.right, targetTransform.forward);
+      Debug.Log(Vector3.Dot(transform.right,targetTransform.right ));
+      var dotProduct = Vector3.Dot(transform.right, targetTransform.right);
       var distanceToTarget = Vector3.Distance(transform.position, targetTransform.position);
 
       var tempTeleportOffset = teleportOffset;
