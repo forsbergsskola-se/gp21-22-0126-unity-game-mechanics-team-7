@@ -20,10 +20,10 @@ public class AbilityControllerBT : MonoBehaviour {
 	}
 
 	private void EnableWalk() {
-		GetComponent<PlayerWalkController>().enabled = true;
+		GetComponent<WalkController>().enabled = true;
 	}
 	private void DisableWalk() {
-		GetComponent<PlayerWalkController>().enabled = false;
+		GetComponent<WalkController>().enabled = false;
 	}
 	private void EnableJump() {
 		GetComponent<PlayerChargeJumpController>().enabled = true;
@@ -32,9 +32,9 @@ public class AbilityControllerBT : MonoBehaviour {
 		GetComponent<PlayerChargeJumpController>().enabled = false;
 	}
 	private void EnableFly() {
-		GetComponent<HelicopterContollerBT>().enabled = true;
+		GetComponent<FlightContollerBT>().enabled = true;
 	}
 	private void DisableFly() {
-		GetComponent<HelicopterContollerBT>().enabled = false;
+		GetComponent<FlightContollerBT>().enabled = false;
 	}
 }
