@@ -173,9 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0957e17adbde2947a6924cb0a383e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 1663053347730230, guid: 2bc164917408ec6408959ca79846a6f8, type: 3}
+  bomb: {fileID: 1663053347730230, guid: 9bc6577de4633264cbd14d3928c700d2, type: 3}
   attackRange: 13
-  attackDelay: 0.3
+  attackDelay: 0.75
 --- !u!1001 &296957053153106079
 PrefabInstance:
   m_ObjectHideFlags: 0

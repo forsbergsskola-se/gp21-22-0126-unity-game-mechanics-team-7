@@ -850,7 +850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2681273689579087499, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
@@ -1287,10 +1287,6 @@ PrefabInstance:
     - target: {fileID: 296957053100235237, guid: 82007ff2b8c19da4cac9eaf0dc29d808, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 296957053100235242, guid: 82007ff2b8c19da4cac9eaf0dc29d808, type: 3}
-      propertyPath: attackDelay
-      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82007ff2b8c19da4cac9eaf0dc29d808, type: 3}
