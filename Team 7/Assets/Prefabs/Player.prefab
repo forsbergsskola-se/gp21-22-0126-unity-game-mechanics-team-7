@@ -51,7 +51,8 @@ MonoBehaviour:
   jumpCommand: 0
   jumpCommandDown: 0
   jumpCommandUp: 0
-  hoverCommand: 0
+  hoverCommandOn: 0
+  hoverCommandOff: 0
   teleportBehindTargetCommand: 0
   chargedTeleportCommand: 0
   chargedTeleportUpCommand: 0
@@ -90,7 +91,7 @@ GameObject:
   - component: {fileID: 1369681903202269314}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,12 +1,14 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bombing : MonoBehaviour {
 	private Transform player;
 	private bool canAttack = true;
 	public GameObject bomb;
+	[SerializeField] private float attackRange;
+	[SerializeField] private float attackDelay;
+
+	
 	private void Start() {
 		player = GameObject.FindWithTag("Player").transform;
 	}
@@ -15,7 +17,7 @@ public class Bombing : MonoBehaviour {
 	}
 	private void Attack() {
 		var distanceToTarget = Vector3.Distance(player.position, transform.position);
-		if (distanceToTarget < 12.5 && canAttack) {
+		if (distanceToTarget < attackRange && canAttack) {
 			Instantiate(bomb, transform.position, Quaternion.identity);
 			canAttack = false;
 			StartCoroutine(DelayAttack());
@@ -24,7 +26,7 @@ public class Bombing : MonoBehaviour {
 	
 	private IEnumerator DelayAttack() 
 	{
-		yield return new WaitForSeconds(0.25f);
+		yield return new WaitForSeconds(attackDelay);
 		canAttack = true;
 	}
 }

@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a15531c4bfcc54f8880c7c1e753392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPosition: {fileID: 11400000, guid: f35f394b6f8e6504989410f442db2ec7, type: 2}
+  sightRange: 20
 --- !u!114 &296957052442764864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,10 +65,13 @@ MonoBehaviour:
   jumpCommand: 0
   jumpCommandDown: 0
   jumpCommandUp: 0
-  hoverCommand: 0
+  hoverCommandOn: 0
+  hoverCommandOff: 0
   teleportBehindTargetCommand: 0
   chargedTeleportCommand: 0
   chargedTeleportUpCommand: 0
+  swimCommandHorizontal: 0
+  swimCommandVertical: 0
 --- !u!1 &296957053100235233
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bomb: {fileID: 1663053347730230, guid: 2bc164917408ec6408959ca79846a6f8, type: 3}
+  attackRange: 13
+  attackDelay: 0.3
 --- !u!1001 &296957053153106079
 PrefabInstance:
   m_ObjectHideFlags: 0

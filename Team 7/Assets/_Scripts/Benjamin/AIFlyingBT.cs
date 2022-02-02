@@ -1,18 +1,30 @@
+using System;
 using UnityEngine;
 
 public class AIFlyingBT : MonoBehaviour {
-    private CommandContainer commandContainer;
-    private Transform player;
 
-    private void Start() { 
-        commandContainer = GetComponentInChildren<CommandContainer>();
-        player = GameObject.FindWithTag("Player").transform;
+    [SerializeField] private PositionSO targetPosition;
+    [SerializeField] float sightRange;
+    private CommandContainer commandContainer;
+
+    private void Start() {
+        commandContainer = GetComponent<CommandContainer>();
     }
 
     private void Update() {
-        var directionToPlayer = Vector3.Normalize(player.position - transform.position);
+        LookForPlayer();
+    }
+    private void LookForPlayer() {
+        var distanceToPlayer = Vector3.Distance(targetPosition.currentPosition, transform.position);
+        if (distanceToPlayer < sightRange) {
+            MoveToPlayer();
+        }
+    }
+    private void MoveToPlayer() {
+        var directionToPlayer = Vector3.Normalize(targetPosition.currentPosition - transform.position);
         directionToPlayer.Normalize();
         var horizontalDirectionToPlayer = Mathf.Sin(directionToPlayer.x);
+        Debug.Log(horizontalDirectionToPlayer);
         commandContainer.walkCommand = horizontalDirectionToPlayer;
     }
 }
