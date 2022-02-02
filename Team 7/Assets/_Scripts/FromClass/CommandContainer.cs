@@ -25,6 +25,12 @@ public class CommandContainer : MonoBehaviour {
 	public bool chargedTeleportDownCommand;
 	public bool chargedTeleportUpCommand;
 	
+	//Portal
+	public bool spawnPortalOneDownCommand;
+	public bool spawnPortalTwoDownCommand;
+	public bool spawnPortalOneCommand;
+	public bool spawnPortalTwoCommand;
+	
 	//Swimming
 	public float swimCommandHorizontal;
 	public float swimCommandVertical;

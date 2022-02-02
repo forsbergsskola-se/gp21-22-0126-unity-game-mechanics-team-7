@@ -17,10 +17,17 @@ public class PlayerInputController : MonoBehaviour {
 	private bool jumpInputUp;
 	private bool jumpInput;
 	
+	//Teleport
 	private bool teleportBehindTargetInput;
 	private bool chargedTeleportInput;
 	private bool chargedTeleportDownInput;
 	private bool chargedTeleportUpInput;
+	
+	//Portal
+	private bool spawnPortalOneDownInput;
+	private bool spawnPortalTwoDownInput;
+	private bool spawnPortalOneInput;
+	private bool spawnPortalTwoInput;
 
 	private void Start() {
 		commandContainer = GetComponent<CommandContainer>();
@@ -50,6 +57,12 @@ public class PlayerInputController : MonoBehaviour {
 		chargedTeleportDownInput = Input.GetKeyDown(KeyCode.LeftShift);
 		chargedTeleportUpInput = Input.GetKeyUp(KeyCode.LeftShift);
 		
+		//Portal
+		spawnPortalOneDownInput = Input.GetKeyDown(KeyCode.Mouse0);
+		spawnPortalTwoDownInput = Input.GetKeyDown(KeyCode.Mouse1);
+		spawnPortalOneInput = Input.GetKey(KeyCode.Mouse0);
+		spawnPortalTwoInput = Input.GetKey(KeyCode.Mouse1);
+		
 		//Swimming
 		swimHorizontalInput = Input.GetAxis("Horizontal");
 		swimVerticalInput = Input.GetAxis("Vertical");
@@ -76,8 +89,15 @@ public class PlayerInputController : MonoBehaviour {
 		commandContainer.chargedTeleportDownCommand = chargedTeleportDownInput;
 		commandContainer.chargedTeleportUpCommand = chargedTeleportUpInput;
 		
-		
-		//Swimming
+		//Portal
+		commandContainer.spawnPortalOneDownCommand = spawnPortalOneDownInput;
+		commandContainer.spawnPortalTwoDownCommand = spawnPortalTwoDownInput;
+		commandContainer.spawnPortalOneCommand = spawnPortalOneInput;
+		commandContainer.spawnPortalTwoCommand = spawnPortalTwoInput;
+			
+
+
+			//Swimming
 		commandContainer.swimCommandHorizontal = swimHorizontalInput;
 		commandContainer.swimCommandVertical = swimVerticalInput;
 	}

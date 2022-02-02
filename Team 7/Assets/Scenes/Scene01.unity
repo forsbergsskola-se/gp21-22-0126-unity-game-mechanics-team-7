@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &486502746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2681273688648574097, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+  m_PrefabInstance: {fileID: 2681273688065504222}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21a2635367c351408fd05609d4d059b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a48c659d2755a4e9d7ac4f437a915e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oppositePortal: {fileID: 11400000, guid: 4399800ac5bee8c438d54672516dc1ef, type: 2}
+  oppositePortal: {fileID: 11400000, guid: f8d1b441865b4ef4e9cae12a8562d6c4, type: 2}
+  thisPortal: {fileID: 11400000, guid: 90482ad4e1209f440bf016573d366099, type: 2}
+  portalCooldown: 0.1
 --- !u!1 &811024770
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a48c659d2755a4e9d7ac4f437a915e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oppositePortal: {fileID: 11400000, guid: e7c6c61709b6af447af6290cd68bedc7, type: 2}
+  oppositePortal: {fileID: 11400000, guid: 90482ad4e1209f440bf016573d366099, type: 2}
+  thisPortal: {fileID: 11400000, guid: f8d1b441865b4ef4e9cae12a8562d6c4, type: 2}
+  portalCooldown: 0.1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,6 +1262,25 @@ MonoBehaviour:
   orbSpeed: 5
   orbDuration: 3
   orbDeathTimer: 5
+--- !u!114 &1850250597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326576555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de086ac5c6334c94e91c891f7db63a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bluePortal: {fileID: 802741293}
+  redPortal: {fileID: 811024776}
+  portalGunRange: 10
+  commandContainer: {fileID: 486502746}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1907185079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1280,7 +1314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2807529868473121593, guid: f929a2e2eace0dc459e8fe338099d49c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 2807529868473121593, guid: f929a2e2eace0dc459e8fe338099d49c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1363,7 +1397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1968732897
 Transform:
   m_ObjectHideFlags: 0
