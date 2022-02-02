@@ -19,6 +19,7 @@ public class PlayerInputController : MonoBehaviour {
 	
 	private bool teleportBehindTargetInput;
 	private bool chargedTeleportInput;
+	private bool chargedTeleportDownInput;
 	private bool chargedTeleportUpInput;
 
 	private void Start() {
@@ -46,6 +47,7 @@ public class PlayerInputController : MonoBehaviour {
 		//Teleportation
 		teleportBehindTargetInput = Input.GetKey(KeyCode.E);
 		chargedTeleportInput = Input.GetKey(KeyCode.LeftShift);
+		chargedTeleportDownInput = Input.GetKeyDown(KeyCode.LeftShift);
 		chargedTeleportUpInput = Input.GetKeyUp(KeyCode.LeftShift);
 		
 		//Swimming
@@ -71,7 +73,9 @@ public class PlayerInputController : MonoBehaviour {
 		//Teleportation
 		commandContainer.teleportBehindTargetCommand = teleportBehindTargetInput;
 		commandContainer.chargedTeleportCommand = chargedTeleportInput;
+		commandContainer.chargedTeleportDownCommand = chargedTeleportDownInput;
 		commandContainer.chargedTeleportUpCommand = chargedTeleportUpInput;
+		
 		
 		//Swimming
 		commandContainer.swimCommandHorizontal = swimHorizontalInput;

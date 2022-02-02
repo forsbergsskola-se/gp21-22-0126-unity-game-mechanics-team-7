@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6518039242674950794}
   - component: {fileID: 8294992431349270681}
   - component: {fileID: 3783837173070427709}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: GroundFloor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

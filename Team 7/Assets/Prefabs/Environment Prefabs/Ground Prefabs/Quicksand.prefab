@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4883981124435146911}
   - component: {fileID: 7610639583663770495}
   - component: {fileID: 1830226646072408387}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,9 @@ GameObject:
   - component: {fileID: 3121714580171642050}
   - component: {fileID: 2827022616027705002}
   - component: {fileID: 8018929655600435430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quicksand
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 public class ChangeToNextScene : MonoBehaviour
 {
     void OnTriggerEnter(Collider other){
-        Debug.Log("Loading next scene");
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentScene + 1);
+        if (other.CompareTag("Player")){
+            Debug.Log("Loading next scene");
+            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentScene + 1);
+        }
+        
     }
 }

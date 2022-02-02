@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 948039733657339262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quicksandx5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quicksand (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6639595867911599753, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
 --- !u!4 &4185039954078960587 stripped
@@ -152,6 +156,10 @@ PrefabInstance:
     - target: {fileID: 6639595867911599753, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
       propertyPath: m_Name
       value: Quicksand (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639595867911599753, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
@@ -215,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quicksand
       objectReference: {fileID: 0}
+    - target: {fileID: 6639595867911599753, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
 --- !u!4 &906657235845641377 stripped
@@ -277,6 +289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quicksand (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6639595867911599753, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
 --- !u!4 &8510795379907197375 stripped
@@ -338,6 +354,10 @@ PrefabInstance:
     - target: {fileID: 6639595867911599753, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
       propertyPath: m_Name
       value: Quicksand (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639595867911599753, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a7eb0221a677f41a10e57765bb0004, type: 3}
