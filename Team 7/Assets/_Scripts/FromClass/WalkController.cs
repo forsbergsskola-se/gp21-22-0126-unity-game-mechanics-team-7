@@ -6,9 +6,7 @@ public class WalkController : MonoBehaviour {
 	private CommandContainer commandContainer;
 	private new Rigidbody rigidbody;
 	private Animator anim;
-
-	private bool isLookingRight = true;
-
+	
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
 		commandContainer = GetComponentInChildren<CommandContainer>();

@@ -16,7 +16,8 @@ public class CommandContainer : MonoBehaviour {
 	public bool jumpCommandUp;
 	
 	//Hovering
-	public bool hoverCommand;
+	public bool hoverCommandOn;
+	public bool hoverCommandOff;
 	
 	//Teleporting
 	public bool teleportBehindTargetCommand;

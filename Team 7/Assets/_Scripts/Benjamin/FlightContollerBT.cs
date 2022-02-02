@@ -22,17 +22,16 @@ public class FlightContollerBT : MonoBehaviour {
 	}
 	private void HoverSelector() {
 		// Switches the flight mode from basic flight to hover when space is pressed.
-		switch (commandContainer.hoverCommand) {
-			case true when !isHovering:
-				rigidbody.velocity = Vector3.zero;
-				rigidbody.useGravity = false;
-				isHovering = true;
-				break;
-			case true when isHovering:
-				rigidbody.useGravity = true;
-				isHovering = false;
-				break;
+		if (commandContainer.hoverCommandOn) {
+			rigidbody.velocity = Vector3.zero;
+			rigidbody.useGravity = false;
+			isHovering = true;
 		}
+		else if (commandContainer.hoverCommandOff) {
+			rigidbody.useGravity = true;
+			isHovering = false;
+		}
+		
 		if (isHovering) {
 			// Hover movement.
 			rigidbody.velocity = new Vector3(commandContainer.walkCommand * 5, 0, 0);

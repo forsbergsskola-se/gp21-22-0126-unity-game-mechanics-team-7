@@ -2,17 +2,21 @@ using System;
 using UnityEngine;
 
 public class PlayerInputController : MonoBehaviour {
+
 	private CommandContainer commandContainer;
 	private float flyInput;
 	private float flyRotateInput;
+	private bool hoverInputOn;
+	private bool hoverInputOff;
+
 	private float swimVerticalInput;
 	private float swimHorizontalInput;
-	private float walkInput;
 	
+	private float walkInput;
 	private bool jumpInputDown;
 	private bool jumpInputUp;
 	private bool jumpInput;
-	private bool hoverInput;
+	
 	private bool teleportBehindTargetInput;
 	private bool chargedTeleportInput;
 	private bool chargedTeleportUpInput;
@@ -36,7 +40,8 @@ public class PlayerInputController : MonoBehaviour {
 		//Flying
 		flyInput = Input.GetAxis("Vertical");
 		flyRotateInput = Input.GetAxis("Horizontal");
-		hoverInput = Input.GetButtonDown("Jump");
+		hoverInputOn = Input.GetButtonDown("Jump");
+		hoverInputOff = Input.GetButtonUp("Jump");
 		
 		//Teleportation
 		teleportBehindTargetInput = Input.GetKey(KeyCode.E);
@@ -60,7 +65,8 @@ public class PlayerInputController : MonoBehaviour {
 		//Flying
 		commandContainer.flyCommand = flyInput;
 		commandContainer.flyRotateCommand = flyRotateInput;
-		commandContainer.hoverCommand = hoverInput;
+		commandContainer.hoverCommandOn = hoverInputOn;
+		commandContainer.hoverCommandOff = hoverInputOff;
 		
 		//Teleportation
 		commandContainer.teleportBehindTargetCommand = teleportBehindTargetInput;
