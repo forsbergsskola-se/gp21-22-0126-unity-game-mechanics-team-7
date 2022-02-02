@@ -10,19 +10,22 @@ public class FlightContollerBT : MonoBehaviour {
 	private bool isHovering = false;
 	private Vector3 angleVeloctiy;
 	private Animator anim;
+	private GroundChecker groundChecker;
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
+		groundChecker = GetComponent<GroundChecker>();
 		commandContainer = GetComponentInChildren<CommandContainer>();
 		anim = GetComponentInChildren<Animator>();
 	}
 	private void Update() {
+		
 		MoveVertically();
 		HoverSelector();
 	}
 	private void HoverSelector() {
 		// Switches the flight mode from basic flight to hover when space is pressed.
-		if (commandContainer.hoverCommandOn) {
+		if (commandContainer.hoverCommandOn && !groundChecker.IsGrounded) {
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.useGravity = false;
 			isHovering = true;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerChargeJumpController : MonoBehaviour
+public class ChargeJump : MonoBehaviour
 {
     [SerializeField] private float minimumJumpForce;
     [SerializeField] private float maximumJumpForce;

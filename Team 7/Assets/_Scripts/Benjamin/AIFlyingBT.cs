@@ -24,7 +24,6 @@ public class AIFlyingBT : MonoBehaviour {
         var directionToPlayer = Vector3.Normalize(targetPosition.currentPosition - transform.position);
         directionToPlayer.Normalize();
         var horizontalDirectionToPlayer = Mathf.Sin(directionToPlayer.x);
-        Debug.Log(horizontalDirectionToPlayer);
         commandContainer.walkCommand = horizontalDirectionToPlayer;
     }
 }
