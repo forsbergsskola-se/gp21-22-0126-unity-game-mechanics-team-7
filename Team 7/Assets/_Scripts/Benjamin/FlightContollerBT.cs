@@ -5,57 +5,36 @@ public class FlightContollerBT : MonoBehaviour {
 	
 	[SerializeField] private float enginePower;
 	[SerializeField] private float rotationForce;
+	private HoverControllerBT hoverControllerBT;
 	private CommandContainer commandContainer;
 	private new Rigidbody rigidbody;
-	private bool isHovering = false;
 	private Vector3 angleVeloctiy;
 	private Animator anim;
-	private GroundChecker groundChecker;
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
-		groundChecker = GetComponent<GroundChecker>();
 		commandContainer = GetComponentInChildren<CommandContainer>();
 		anim = GetComponentInChildren<Animator>();
+		hoverControllerBT = GetComponent<HoverControllerBT>();
 	}
 	private void Update() {
 		
 		MoveVertically();
-		HoverSelector();
-	}
-	private void HoverSelector() {
-		// Switches the flight mode from basic flight to hover when space is pressed.
-		if (commandContainer.hoverCommandOn && !groundChecker.IsGrounded) {
-			rigidbody.velocity = Vector3.zero;
-			rigidbody.useGravity = false;
-			isHovering = true;
-		}
-		else if (commandContainer.hoverCommandOff) {
-			rigidbody.useGravity = true;
-			isHovering = false;
-		}
-		
-		if (isHovering) {
-			// Hover movement.
-			rigidbody.velocity = new Vector3(commandContainer.walkCommand * 5, 0, 0);
-			// Plays flying animation.
-			anim.SetBool("jump", true);
-		}
-		else {
-			Rotate();
-		}
+		Rotate();
 	}
 	private void Rotate() {
 		// Rotates player using rigidbody
+		if (hoverControllerBT.isHovering)
+			return;
 		angleVeloctiy = new Vector3(0, 0, rotationForce * -commandContainer.flyRotateCommand);
 		Quaternion deltaRotation = Quaternion.Euler(angleVeloctiy * Time.deltaTime);
 		rigidbody.MoveRotation(rigidbody.rotation * deltaRotation);
 	}
 	private void MoveVertically() {
 		// Moves player up in the air.
-		if (isHovering)
+		if (hoverControllerBT.isHovering)
 			return;
-		rigidbody.AddForce(transform.up * Mathf.Clamp(commandContainer.flyCommand, 0, 1) * enginePower * Time.deltaTime);
+		rigidbody.AddForce(transform.up * Mathf.Abs(commandContainer.flyCommand) * enginePower * Time.deltaTime);
 		if (commandContainer.flyCommand > 0) {
 			// Plays flying animation.
 			anim.SetBool("jump", true);
