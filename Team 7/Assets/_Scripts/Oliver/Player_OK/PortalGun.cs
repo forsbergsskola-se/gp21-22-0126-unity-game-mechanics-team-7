@@ -19,7 +19,7 @@ public class PortalGun : MonoBehaviour{
     GameObject redPortalGameObject;
 
 
-    void Awake(){
+    void Start(){
         camera = Camera.main;
         bluePortalGameObject = bluePortal.gameObject;
         redPortalGameObject = redPortal.gameObject;
