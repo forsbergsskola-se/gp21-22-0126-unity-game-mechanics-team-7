@@ -7,8 +7,11 @@ public class FollowTarget : MonoBehaviour{
     [SerializeField] PositionSO targetPosition;
     [SerializeField] float aggroRange;
     [SerializeField] float moveSpeed;
+    private Animator anim;
 
-
+    private void Start() {
+        anim = GetComponentInChildren<Animator>();
+    }
     void Update(){
         var distanceToTarget=Vector3.Distance(this.transform.position, targetPosition.currentPosition);
 
@@ -23,6 +26,7 @@ public class FollowTarget : MonoBehaviour{
         Debug.Log(distanceToTarget);
         if (distanceToTarget < aggroRange){
             transform.position = Vector3.MoveTowards(transform.position, targetPosition.currentPosition, moveSpeed*Time.deltaTime);
+            anim.SetInteger("Walk", 1);
         }
         
         
