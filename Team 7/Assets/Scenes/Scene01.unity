@@ -190,6 +190,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163044472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 296957052442764864, guid: 82007ff2b8c19da4cac9eaf0dc29d808, type: 3}
+  m_PrefabInstance: {fileID: 209181403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21a2635367c351408fd05609d4d059b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &175172164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 296957053100235237, guid: 82007ff2b8c19da4cac9eaf0dc29d808, type: 3}
@@ -1552,7 +1563,7 @@ MonoBehaviour:
   teleportRange: 5
   teleportCooldown: 20
   teleportOffset: {x: 2, y: 1, z: 0}
-  commandContainer: {fileID: 0}
+  commandContainer: {fileID: 163044472}
   targetMask:
     serializedVersion: 2
     m_Bits: 512
@@ -1573,7 +1584,7 @@ MonoBehaviour:
   portalOne: {fileID: 11400000, guid: 90482ad4e1209f440bf016573d366099, type: 2}
   portalTwo: {fileID: 11400000, guid: f8d1b441865b4ef4e9cae12a8562d6c4, type: 2}
   aggroRange: 10
-  moveSpeed: 1
+  moveSpeed: 3
 --- !u!54 &1738149680
 Rigidbody:
   m_ObjectHideFlags: 0
