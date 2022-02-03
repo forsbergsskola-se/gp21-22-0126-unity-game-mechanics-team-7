@@ -35,6 +35,7 @@ public class HoverControllerBT : MonoBehaviour {
 		if (!isHovering)
 			return;
 		// Hover movement.
+		rigidbody.rotation = Quaternion.identity;
 		rigidbody.velocity = new Vector3(commandContainer.walkCommand * 5, 0, 0);
 		// Plays flying animation.
 		anim.SetBool("jump", true);
