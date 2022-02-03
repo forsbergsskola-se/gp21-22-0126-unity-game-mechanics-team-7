@@ -10,6 +10,8 @@ public class PortalGun : MonoBehaviour{
     [SerializeField] CommandContainer commandContainer;
     [SerializeField] LayerMask targetMask;
 
+    public bool portalGunIsActive;
+
 
     Camera camera;
 
@@ -24,12 +26,15 @@ public class PortalGun : MonoBehaviour{
     }
 
     void FixedUpdate(){
-        if (commandContainer.spawnPortalOneCommand){
-            SpawnPortalAtCursor(bluePortalGameObject);
+        if (portalGunIsActive){
+            if (commandContainer.spawnPortalOneCommand){
+                SpawnPortalAtCursor(bluePortalGameObject);
+            }
+            else if (commandContainer.spawnPortalTwoCommand){
+                SpawnPortalAtCursor(redPortalGameObject);
+            }
         }
-        else if (commandContainer.spawnPortalTwoCommand){
-            SpawnPortalAtCursor(redPortalGameObject);
-        }
+        
     }
 
     void SpawnPortalAtCursor(GameObject portal){
