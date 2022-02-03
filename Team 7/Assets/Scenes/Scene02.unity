@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OH NO!
+  m_text: OH NOES!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2986,6 +2986,7 @@ GameObject:
   - component: {fileID: 187050970}
   - component: {fileID: 187050969}
   - component: {fileID: 187050968}
+  - component: {fileID: 187050971}
   m_Layer: 0
   m_Name: GeiserForce
   m_TagString: Untagged
@@ -3001,7 +3002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187050966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.81, y: -22.1, z: 0.43}
+  m_LocalPosition: {x: 15.81, y: -22.1, z: 2.9}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3071,6 +3072,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187050966}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &187050971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187050966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51315c5433def4ac0b804e05c01b4929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  geiserForce: 3
+  rayCastSphereRadius: 3
 --- !u!1001 &188830592
 PrefabInstance:
   m_ObjectHideFlags: 0
