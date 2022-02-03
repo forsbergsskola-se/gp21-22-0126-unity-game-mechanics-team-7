@@ -1087,6 +1087,7 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194231}
   - component: {fileID: 963194232}
+  - component: {fileID: 963194233}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1257,6 +1258,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &963194233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -731260177
+      Data2: 1284319091
+      Data3: -164018266
+      Data4: 1629777719
+    Path: event:/Music/lvl1
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1328072483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,7 +1352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f4145b0a9a9404cb6b2766b15e2dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalGun: {fileID: 0}
 --- !u!135 &1358167757
 SphereCollider:
   m_ObjectHideFlags: 0
