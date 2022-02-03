@@ -5,8 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeToNextScene : MonoBehaviour{
-
-    [SerializeField] PortalGun portalGun;
+    PortalGun portalGun;
 
 
     void Awake(){
