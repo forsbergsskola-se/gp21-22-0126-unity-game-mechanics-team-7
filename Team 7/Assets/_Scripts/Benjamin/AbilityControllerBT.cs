@@ -49,8 +49,10 @@ public class AbilityControllerBT : MonoBehaviour {
 	}
 	private void EnableFly() {
 		GetComponent<FlightContollerBT>().enabled = true;
+		GetComponent<HoverControllerBT>().enabled = true;
 	}
 	private void DisableFly() {
 		GetComponent<FlightContollerBT>().enabled = false;
+		GetComponent<HoverControllerBT>().enabled = false;
 	}
 }
