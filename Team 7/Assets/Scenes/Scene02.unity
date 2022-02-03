@@ -3891,6 +3891,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100045717529880697, guid: 3a966e5d690fd3f4cb93e453b0b9fdee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7952663
+      objectReference: {fileID: 0}
+    - target: {fileID: 100045717529880697, guid: 3a966e5d690fd3f4cb93e453b0b9fdee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.108332
+      objectReference: {fileID: 0}
+    - target: {fileID: 100045717529880697, guid: 3a966e5d690fd3f4cb93e453b0b9fdee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2697284
+      objectReference: {fileID: 0}
+    - target: {fileID: 100045717529880697, guid: 3a966e5d690fd3f4cb93e453b0b9fdee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -59
       objectReference: {fileID: 0}
@@ -3930,10 +3942,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100045717529880697, guid: 3a966e5d690fd3f4cb93e453b0b9fdee, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5033032550229117499, guid: 3a966e5d690fd3f4cb93e453b0b9fdee, type: 3}
       propertyPath: m_Name
       value: PortalFromLastScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7390127502133341283, guid: 3a966e5d690fd3f4cb93e453b0b9fdee, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4439f633a62bf5041a6ee3b69555ac82, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a966e5d690fd3f4cb93e453b0b9fdee, type: 3}
 --- !u!1001 &273196235
