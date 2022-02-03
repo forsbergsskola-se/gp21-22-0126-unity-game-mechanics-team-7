@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class SwimController : MonoBehaviour {
     [SerializeField] private float swimHorizontalSpeed;
     [SerializeField] private float swimVerticalSpeed;
+    [SerializeField] private Animator anim;
 
     private Rigidbody _rigidbody;
     private CommandContainer commandContainer;
@@ -30,6 +31,8 @@ public class SwimController : MonoBehaviour {
         
         FaceSwimmingDirection();
         _rigidbody.velocity = velocity;
+        
+        anim.SetBool("jump", true);
     }
 
     private void FaceSwimmingDirection() {

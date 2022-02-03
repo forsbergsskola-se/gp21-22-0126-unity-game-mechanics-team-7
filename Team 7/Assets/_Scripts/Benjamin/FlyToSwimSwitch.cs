@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyToSwimSwitch : MonoBehaviour {
-	public GameObject Seafloor;
+	[SerializeField] GameObject Seafloor;
 	private void OnTriggerEnter(Collider other) {
 		if (other.CompareTag("Player")) {
 			other.GetComponent<FlightContollerBT>().enabled = false;
