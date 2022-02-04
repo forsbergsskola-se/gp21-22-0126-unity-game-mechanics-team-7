@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Geiser : MonoBehaviour {
     [SerializeField] private float rayCastSphereRadius = 3f;
+    private float powerRange = 10f;
     private float geiserForce = 70f;
     
     private bool canErupt = true;
@@ -31,7 +32,6 @@ public class Geiser : MonoBehaviour {
     }
 
     private void OnDrawGizmos() {
-        float powerRange = 10f;
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, transform.up * powerRange);
         Gizmos.DrawWireSphere(transform.position + transform.up * hit.distance, rayCastSphereRadius);
