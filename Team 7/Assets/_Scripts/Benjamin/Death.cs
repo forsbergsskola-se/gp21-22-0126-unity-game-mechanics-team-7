@@ -6,7 +6,7 @@ using UnityEngine;
 public class Death : MonoBehaviour {
 	
 	public bool isDead;
-	public GameObject deathMessage;
+	[SerializeField] private GameObject deathMessage;
 	private void FixedUpdate() {
 		if (isDead) {
 			transform.Translate(0, 2 * Time.deltaTime, -10 * Time.deltaTime);

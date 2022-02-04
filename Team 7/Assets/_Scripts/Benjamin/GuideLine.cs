@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuideLine : MonoBehaviour
-{
+public class GuideLine : MonoBehaviour {
 	[SerializeField] private GameObject button;
 	[SerializeField] private GameObject color;
 	private void Update() {

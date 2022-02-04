@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class Bombing : MonoBehaviour {
+public class AIBombingBT : MonoBehaviour {
 	private Transform player;
 	private bool canAttack = true;
-	public GameObject bomb;
+	[SerializeField] private GameObject bomb;
 	[SerializeField] private float attackRange;
 	[SerializeField] private float attackDelay;
 
