@@ -28,7 +28,7 @@ public class ChargedTeleport : MonoBehaviour{
    }
 
 
-   void FixedUpdate(){
+   void Update(){
       // if (commandContainer.walkCommand > 0 ){
       //    orbDirection = transform.right;
       // }
