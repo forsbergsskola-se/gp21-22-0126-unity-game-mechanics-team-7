@@ -939,17 +939,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &163044472 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 296957052442764864, guid: 82007ff2b8c19da4cac9eaf0dc29d808, type: 3}
-  m_PrefabInstance: {fileID: 209181403}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a21a2635367c351408fd05609d4d059b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &170042802
 GameObject:
   m_ObjectHideFlags: 0
@@ -5305,6 +5294,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1005745590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1005745591}
+  - component: {fileID: 1005745592}
+  m_Layer: 7
+  m_Name: Command
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1005745591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005745590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1738149677}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005745592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005745590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21a2635367c351408fd05609d4d059b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkCommand: 0
+  flyCommand: 0
+  flyRotateCommand: 0
+  jumpCommand: 0
+  jumpCommandDown: 0
+  jumpCommandUp: 0
+  hoverCommandOn: 0
+  hoverCommandOff: 0
+  teleportBehindTargetCommand: 0
+  chargedTeleportCommand: 0
+  chargedTeleportDownCommand: 0
+  chargedTeleportUpCommand: 0
+  spawnPortalOneDownCommand: 0
+  spawnPortalTwoDownCommand: 0
+  spawnPortalOneCommand: 0
+  spawnPortalTwoCommand: 0
+  swimCommandHorizontal: 0
+  swimCommandVertical: 0
 --- !u!1 &1022270391
 GameObject:
   m_ObjectHideFlags: 0
@@ -7928,6 +7979,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1722586855}
+  - {fileID: 1005745591}
   m_Father: {fileID: 1968732897}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -179.978, z: 0}
@@ -7946,7 +7998,7 @@ MonoBehaviour:
   teleportRange: 5
   teleportCooldown: 20
   teleportOffset: {x: 2, y: 1, z: 0}
-  commandContainer: {fileID: 163044472}
+  commandContainer: {fileID: 1005745592}
   targetMask:
     serializedVersion: 2
     m_Bits: 512
