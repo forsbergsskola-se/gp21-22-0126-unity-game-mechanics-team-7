@@ -5,8 +5,10 @@ public class ChargeJump : MonoBehaviour
     [SerializeField] private float minimumJumpForce;
     [SerializeField] private float maximumJumpForce;
     [SerializeField] private float chargeTime;
+    [SerializeField] private float maxTimeSinceGrounded;
 
     private float jumpCharge;
+    private float timeSinceGrounded;
     private GroundChecker groundChecker;
     private CommandContainer commandContainer;
     private new Rigidbody rigidbody;
@@ -20,12 +22,17 @@ public class ChargeJump : MonoBehaviour
     }
     private void Update() => HandleChargeJump();
     // Increases jump charge after time.
-    private void HandleChargeJump() {
-        if (commandContainer.jumpCommand && groundChecker.IsGrounded) {
+    private void HandleChargeJump(){
+        timeSinceGrounded -= Time.deltaTime;
+        if (groundChecker.IsGrounded){
+            timeSinceGrounded = maxTimeSinceGrounded;
+        }
+        if (commandContainer.jumpCommand && timeSinceGrounded > 0) {
             jumpCharge += Time.deltaTime / chargeTime;
         }
         // Releases jump and related charge stored.
-        if (commandContainer.jumpCommandUp && groundChecker.IsGrounded) {
+        if (commandContainer.jumpCommandUp && timeSinceGrounded > 0){
+            timeSinceGrounded = 0;
             var jumpForce = Mathf.Lerp(minimumJumpForce, maximumJumpForce, jumpCharge);
             rigidbody.AddForce(Vector3.up * jumpForce);
             jumpCharge = 0f;
