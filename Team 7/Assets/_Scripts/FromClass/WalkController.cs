@@ -6,6 +6,7 @@ public class WalkController : MonoBehaviour {
 	private CommandContainer commandContainer;
 	private new Rigidbody rigidbody;
 	private Animator anim;
+	private bool isLookingRight;
 	
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
@@ -23,9 +24,11 @@ public class WalkController : MonoBehaviour {
 	void RotateWhenMoving(){
 		if (commandContainer.walkCommand > 0 ){
 			transform.rotation = new Quaternion(0, 0, 0, 0);
+			isLookingRight = true;
 		}
 		else if (commandContainer.walkCommand < 0){
 			transform.rotation = new Quaternion(0, 180, 0, 0);
+			isLookingRight = false;
 		}
 	}
 }

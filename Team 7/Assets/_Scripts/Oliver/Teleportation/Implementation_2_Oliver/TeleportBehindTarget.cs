@@ -42,35 +42,38 @@ public class TeleportBehindTarget : MonoBehaviour{
    }
 
    void Teleport(RaycastHit target){
-var targetTransform = target.transform;
-      Debug.Log(Vector3.Dot(transform.right,targetTransform.right ));
-      var dotProduct = Vector3.Dot(transform.right, targetTransform.right);
-      var distanceToTarget = Vector3.Distance(transform.position, targetTransform.position);
-
-      var tempTeleportOffset = teleportOffset;
-      Debug.Log(distanceToTarget);
-      var isBehindTarget = false;
-      if (distanceToTarget < 0){
-         isBehindTarget = true;
+      var targetTransform = target.transform;
+      var directionToTarget = transform.position - targetTransform.position;
+      if (directionToTarget.x < 0){
+         //Target is to the right
+         if (targetTransform.rotation.y > 0){
+            //Target is looking left 
+            teleportOffset = new Vector3(3, 0, 0);
+            transform.Rotate(0,180,0);
+            transform.position = targetTransform.position + teleportOffset;
+         }
+         else if (targetTransform.rotation.y < 1){
+            //Target is looking right
+            teleportOffset = new Vector3(-3, 0, 0);
+            transform.position = targetTransform.position + teleportOffset;
+         }
          
       }
-      else if (distanceToTarget > 0){
-         isBehindTarget = false;
-         tempTeleportOffset = new Vector3(-teleportOffset.x,teleportOffset.y,teleportOffset.z);
+      else if (directionToTarget.x > 0){
+         //Target is to the left
+         if (targetTransform.rotation.y > 0){
+            //Target is looking left 
+            teleportOffset = new Vector3(3, 0, 0);
+            transform.position = targetTransform.position + teleportOffset;
+            
+         }
+         else if (targetTransform.rotation.y < 1){
+            //Target is looking right
+            teleportOffset = new Vector3(-3, 0, 0);
+            transform.Rotate(0,180,0);
+            transform.position = targetTransform.position + teleportOffset;
+         }
       }
-      
-      if (dotProduct < 0){
-
-         transform.position = targetTransform.position + tempTeleportOffset;
-         
-         //transform.position = new Vector3(targetTransform.position.x + dotProduct* 5, transform.position.y, transform.position.z);
-         transform.Rotate(0,180,0);
-      }
-      else if (dotProduct > 0){
-        // transform.position = new Vector3(targetTransform.position.x + dotProduct* 5, transform.position.y, transform.position.z);
-         transform.position = targetTransform.position + tempTeleportOffset;
-      }
-
 
       StartCoroutine(StartTeleportTimer());
    }
