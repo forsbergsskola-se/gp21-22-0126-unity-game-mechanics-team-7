@@ -46,6 +46,7 @@ public class PortalGun : MonoBehaviour{
 
         if (Physics.Raycast(transform.position, distanceToPoint.normalized, out hit, portalGunRange, targetMask)){
             Debug.Log(hit);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/PORTALS/PortalGun");
             portal.transform.position = hit.point;
             portal.transform.right = hit.normal;
         }

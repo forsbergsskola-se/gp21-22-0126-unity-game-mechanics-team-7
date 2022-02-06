@@ -3659,6 +3659,7 @@ GameObject:
   - component: {fileID: 802741290}
   - component: {fileID: 802741289}
   - component: {fileID: 802741293}
+  - component: {fileID: 802741294}
   m_Layer: 2
   m_Name: Blue Portal
   m_TagString: Untagged
@@ -3761,6 +3762,36 @@ MonoBehaviour:
   oppositePortal: {fileID: 11400000, guid: f8d1b441865b4ef4e9cae12a8562d6c4, type: 2}
   thisPortal: {fileID: 11400000, guid: 90482ad4e1209f440bf016573d366099, type: 2}
   portalCooldown: 0.1
+--- !u!114 &802741294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802741287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1100428792
+      Data2: 1306782822
+      Data3: 559379600
+      Data4: 896478130
+    Path: event:/PORTALS/PortalBlue
+  Event: 
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &808271151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3831,6 +3862,7 @@ GameObject:
   - component: {fileID: 811024773}
   - component: {fileID: 811024772}
   - component: {fileID: 811024776}
+  - component: {fileID: 811024777}
   m_Layer: 2
   m_Name: Red Portal
   m_TagString: Untagged
@@ -3933,6 +3965,36 @@ MonoBehaviour:
   oppositePortal: {fileID: 11400000, guid: 90482ad4e1209f440bf016573d366099, type: 2}
   thisPortal: {fileID: 11400000, guid: f8d1b441865b4ef4e9cae12a8562d6c4, type: 2}
   portalCooldown: 0.1
+--- !u!114 &811024777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811024770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &835296783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4947,7 +5009,7 @@ MonoBehaviour:
       Data2: 1284319091
       Data3: -164018266
       Data4: 1629777719
-    Path: event:/Music/lvl1
+    Path: event:/MUSIC/Game
   Event: 
   PlayEvent: 1
   StopEvent: 0
@@ -6542,6 +6604,7 @@ GameObject:
   - component: {fileID: 1358167757}
   - component: {fileID: 1358167756}
   - component: {fileID: 1358167761}
+  - component: {fileID: 1358167762}
   m_Layer: 0
   m_Name: PortalToNextScene
   m_TagString: Untagged
@@ -6659,6 +6722,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1358167762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358167755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1100428792
+      Data2: 1306782822
+      Data3: 559379600
+      Data4: 896478130
+    Path: event:/PORTALS/PortalBlue
+  Event: 
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1370635044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7842,6 +7935,71 @@ Transform:
   m_Father: {fileID: 1330106240}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1695312285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2950931712500505900, guid: 4d40857cd70c343488ab113e896eef50, type: 3}
+  m_PrefabInstance: {fileID: 287175440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1695312290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695312285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 198590535
+      Data2: 1272996348
+      Data3: -357337450
+      Data4: -1645338337
+    Path: event:/ITEMS/DoorDown
+  Event: 
+  PlayEvent: 12
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1695312291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695312285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -515947190
+      Data2: 1325817135
+      Data3: -375796589
+      Data4: -1859345568
+    Path: event:/ITEMS/DoorUp
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1708666185
 GameObject:
   m_ObjectHideFlags: 0
@@ -8017,6 +8175,7 @@ GameObject:
   - component: {fileID: 1738149679}
   - component: {fileID: 1738149678}
   - component: {fileID: 1738149682}
+  - component: {fileID: 1738149683}
   m_Layer: 7
   m_Name: Lion
   m_TagString: Enemy
@@ -8119,6 +8278,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172d7d067ec8e5545b40e0991e1a3ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1738149683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738149676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -982032544
+      Data2: 1204594419
+      Data3: -270641275
+      Data4: 783131355
+    Path: event:/ITEMS/Lion
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1775889798
 GameObject:
   m_ObjectHideFlags: 0

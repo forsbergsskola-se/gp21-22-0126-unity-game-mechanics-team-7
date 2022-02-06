@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnityResonance;
 using UnityEngine;
 
 public class Portal : MonoBehaviour{
@@ -12,7 +13,8 @@ public class Portal : MonoBehaviour{
 
     void OnTriggerEnter(Collider other){
         if (oppositePortal.isActive && thisPortal.isActive){
-           other.gameObject.transform.position = oppositePortal.portalPosition.currentPosition; 
+            // FMODUnity.RuntimeManager.PlayOneShot("event:/PORTALS/PortalBlue");
+            other.gameObject.transform.position = oppositePortal.portalPosition.currentPosition; 
            StartCoroutine(PortalCooldown());
         }
     }

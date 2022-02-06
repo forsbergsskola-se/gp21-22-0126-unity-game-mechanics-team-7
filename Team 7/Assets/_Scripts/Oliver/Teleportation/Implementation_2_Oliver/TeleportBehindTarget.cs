@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TeleportBehindTarget : MonoBehaviour{
@@ -74,7 +71,6 @@ public class TeleportBehindTarget : MonoBehaviour{
             transform.position = targetTransform.position + teleportOffset;
          }
       }
-
       StartCoroutine(StartTeleportTimer());
    }
 
