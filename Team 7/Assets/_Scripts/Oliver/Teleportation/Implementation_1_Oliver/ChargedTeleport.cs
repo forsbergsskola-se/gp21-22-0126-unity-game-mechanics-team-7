@@ -10,6 +10,7 @@ public class ChargedTeleport : MonoBehaviour{
    [SerializeField] float orbSpeed;
    [SerializeField] float orbDuration;
    [SerializeField] float orbDeathTimer;
+   [SerializeField] public bool abilityAcquired;
 
    Rigidbody teleportRigibody;
 
@@ -29,21 +30,29 @@ public class ChargedTeleport : MonoBehaviour{
 
 
    void Update(){
-      // if (commandContainer.walkCommand > 0 ){
-      //    orbDirection = transform.right;
-      // }
-      // else if (commandContainer.walkCommand < 0){
-      //    orbDirection = -transform.right;
-      // }
+
+      if (!abilityAcquired){
+         return;
+      }
+
       if (commandContainer.chargedTeleportDownCommand && canTeleport){
          teleportOrb.gameObject.SetActive(true);
          teleportRigibody.velocity = Vector3.zero;
          orbStart = Time.time;
+         if (transform.rotation.y > 0){
+            //Looking left
+            orbDirection = new Vector3(-1,0,0);
+         }
+         else if (transform.rotation.y < 1){
+            //Looking right
+            orbDirection = new Vector3(1,0,0);
+         }
          StartCoroutine(ChargedTeleportCooldown());
          StartCoroutine(teleportOrbDeathTimer());
       }
 
       if (commandContainer.chargedTeleportCommand){
+         
          SetTeleportOrbVelocity();
       }
 
