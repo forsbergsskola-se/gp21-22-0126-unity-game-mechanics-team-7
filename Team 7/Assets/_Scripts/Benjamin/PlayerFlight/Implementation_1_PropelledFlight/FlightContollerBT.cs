@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 
 public class FlightContollerBT : MonoBehaviour {
@@ -10,6 +10,7 @@ public class FlightContollerBT : MonoBehaviour {
 	private new Rigidbody rigidbody;
 	private Vector3 angleVeloctiy;
 	private Animator anim;
+	private bool canPlay = true;
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
@@ -18,7 +19,6 @@ public class FlightContollerBT : MonoBehaviour {
 		hoverControllerBT = GetComponent<HoverControllerBT>();
 	}
 	private void Update() {
-		
 		MoveVertically();
 		Rotate();
 	}
@@ -38,6 +38,18 @@ public class FlightContollerBT : MonoBehaviour {
 		if (commandContainer.flyCommand > 0) {
 			// Plays flying animation.
 			anim.SetBool("jump", true);
+			PlaySound();
 		}
+	}
+	private void PlaySound() {
+		if (canPlay) {
+			FMODUnity.RuntimeManager.PlayOneShot("event:/ENVIRONMENT/PenguinGreeting");
+			canPlay = false;
+			StartCoroutine(Wait());
+		}
+	}
+	private IEnumerator Wait() {
+		yield return new WaitForSeconds(3);
+		canPlay = true;
 	}
 }
