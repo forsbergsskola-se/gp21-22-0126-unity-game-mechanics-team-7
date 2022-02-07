@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using FMOD.Studio;
 using UnityEngine;
@@ -27,6 +28,7 @@ public class FlightContollerBT : MonoBehaviour {
 	private void Update() {
 		MoveVertically();
 		Rotate();
+		PlaySound(rigidbody.velocity.magnitude);
 	}
 	private void Rotate() {
 		// Rotates player using rigidbody
@@ -45,12 +47,11 @@ public class FlightContollerBT : MonoBehaviour {
 		if (commandContainer.flyCommand > 0) {
 			// Plays flying animation.
 			anim.SetBool("jump", true);
-			PlaySound(commandContainer.flyCommand);
-			Debug.Log(commandContainer.flyCommand);
 		}
 	}
-	private void PlaySound(float force) {
+	private void PlaySound(float velocity) {
 		instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
-		instance.setParameterByName("velosty",force * 100);
+		instance.setParameterByName("velosety",Mathf.Clamp(velocity * 10, 0,100));
+		Debug.Log(Mathf.Clamp(velocity * 10, 0,100));
 	}
 }
