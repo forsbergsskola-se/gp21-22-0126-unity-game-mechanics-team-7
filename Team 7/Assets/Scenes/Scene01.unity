@@ -3294,7 +3294,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: NaN, w: 2.1415806}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -10440,6 +10440,26 @@ PrefabInstance:
     - target: {fileID: 6655846176048482793, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655846176048482793, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/ENVIRONMENT/Shark
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655846176048482793, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -1399082088
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655846176048482793, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1132809249
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655846176048482793, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 9808048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655846176048482793, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: 947745195
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7667529018608454882, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
