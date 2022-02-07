@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3476,6 +3476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayCastSphereRadius: 3
+  range: 10
   geiserForce: 220
   eruptionDuration: 3
   reposeInterval: 2
@@ -8798,6 +8799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayCastSphereRadius: 2
+  range: 10
   geiserForce: 80
   eruptionDuration: 4
   reposeInterval: 1
@@ -18196,6 +18198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayCastSphereRadius: 3
+  range: 10
   geiserForce: 500
   eruptionDuration: 4
   reposeInterval: 2
@@ -18962,6 +18965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea09b2180cc44b88b0bbaa2291128c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swimHorizontalSpeed: 0
+  swimVerticalSpeed: 0
   patrollingPoints:
   - {fileID: 11400000, guid: 3db225deba8254de7b327c73e7875c92, type: 2}
   - {fileID: 11400000, guid: fc8cd69ef811e4487bcd0225308d23f8, type: 2}
@@ -20878,6 +20883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayCastSphereRadius: 2
+  range: 10
   geiserForce: 80
   eruptionDuration: 4
   reposeInterval: 1
@@ -45043,6 +45049,18 @@ PrefabInstance:
     - target: {fileID: 2681273689579087499, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237791797065491184, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237791797065491184, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237791797065491184, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
