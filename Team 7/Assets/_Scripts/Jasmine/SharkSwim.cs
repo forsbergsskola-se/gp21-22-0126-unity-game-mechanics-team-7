@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class SharkSwim : MonoBehaviour {
-    [SerializeField] private Collider triggerCollider;
-
-    public UnityEvent colliderTriggered;
+    [SerializeField] private PositionSO[] patrollingPoints;
     
     
     // Start is called before the first frame update
