@@ -15,6 +15,7 @@ public class ChangeToNextScene : MonoBehaviour{
 
     void OnTriggerEnter(Collider other){
         if (other.CompareTag("Player")){
+            FMODUnity.RuntimeManager.GetBus("Bus:/").setVolume(0);
             Debug.Log("Loading next scene");
             portalGun = other.GetComponent<PortalGun>();
             portalGun.portalGunIsActive = false;
@@ -22,8 +23,7 @@ public class ChangeToNextScene : MonoBehaviour{
             chargedTeleport.abilityAcquired = false;
             int currentScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentScene + 1);
-            
-
+            FMODUnity.RuntimeManager.GetBus("Bus:/").setVolume(100);
         }
         
     }
