@@ -52,6 +52,5 @@ public class FlightContollerBT : MonoBehaviour {
 	private void PlaySound(float velocity) {
 		instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
 		instance.setParameterByName("velosety",Mathf.Clamp(velocity * 10, 0,100));
-		Debug.Log(Mathf.Clamp(velocity * 10, 0,100));
 	}
 }

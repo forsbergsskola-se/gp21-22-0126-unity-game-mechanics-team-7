@@ -193,6 +193,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enginePower: 900
   rotationForce: 20
+  fmodEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &2681273689579087493
 MonoBehaviour:
   m_ObjectHideFlags: 0
