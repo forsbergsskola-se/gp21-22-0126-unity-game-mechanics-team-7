@@ -30,10 +30,8 @@ public class Geiser : MonoBehaviour {
 
     private IEnumerator GeiserActivity() {
         canErupt = false;
-        Debug.Log("Off");
         yield return new WaitForSeconds(2);
         canErupt = true;
-        Debug.Log("On");
     }
 
     private void OnDrawGizmos() {
