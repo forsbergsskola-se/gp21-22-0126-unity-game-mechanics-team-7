@@ -1,4 +1,5 @@
 using System.Collections;
+using FMOD.Studio;
 using UnityEngine;
 
 public class FlightContollerBT : MonoBehaviour {
@@ -10,13 +11,18 @@ public class FlightContollerBT : MonoBehaviour {
 	private new Rigidbody rigidbody;
 	private Vector3 angleVeloctiy;
 	private Animator anim;
-	private bool canPlay = true;
+	
+	private EventInstance instance;
+	[SerializeField] private FMODUnity.EventReference fmodEvent;
 
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
 		commandContainer = GetComponentInChildren<CommandContainer>();
 		anim = GetComponentInChildren<Animator>();
 		hoverControllerBT = GetComponent<HoverControllerBT>();
+		
+		instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+		instance.start();
 	}
 	private void Update() {
 		MoveVertically();
@@ -34,22 +40,17 @@ public class FlightContollerBT : MonoBehaviour {
 		// Moves player up in the air.
 		if (hoverControllerBT.isHovering)
 			return;
-		rigidbody.AddForce(transform.up * Mathf.Abs(commandContainer.flyCommand) * enginePower * Time.deltaTime);
+		var force = Mathf.Abs(commandContainer.flyCommand) * enginePower * Time.deltaTime;
+		rigidbody.AddForce(transform.up * force);
 		if (commandContainer.flyCommand > 0) {
 			// Plays flying animation.
 			anim.SetBool("jump", true);
-			PlaySound();
+			PlaySound(commandContainer.flyCommand);
+			Debug.Log(commandContainer.flyCommand);
 		}
 	}
-	private void PlaySound() {
-		if (canPlay) {
-			FMODUnity.RuntimeManager.PlayOneShot("event:/ENVIRONMENT/PenguinGreeting");
-			canPlay = false;
-			StartCoroutine(Wait());
-		}
-	}
-	private IEnumerator Wait() {
-		yield return new WaitForSeconds(3);
-		canPlay = true;
+	private void PlaySound(float force) {
+		instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
+		instance.setParameterByName("velosty",force * 100);
 	}
 }
