@@ -1,34 +1,28 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Geiser : MonoBehaviour {
+public class Geyser : MonoBehaviour {
     [SerializeField] private float rayCastSphereRadius = 3f;
     [SerializeField] private float range = 10f;
-    [SerializeField] private float geiserForce = 220f;
+    [SerializeField] private float geyserForce = 220f;
     [SerializeField] private float eruptionDuration = 2.5f;
     [SerializeField] private float reposeInterval = 2f;
-
     [SerializeField] private ParticleSystem bubbles;
-    
-    
-    private bool canErupt = true;
-    private bool objectFoundInArea;
 
-    private RaycastHit hit;
+    private bool _canErupt = true;
+    private bool _objectFoundInArea;
+    private RaycastHit _hit;
 
     private void Start() {
         StartCoroutine(Eruption());
     }
 
     private void FixedUpdate() {
-        objectFoundInArea = Physics.SphereCast(transform.position, rayCastSphereRadius, transform.up, out hit, range);
+        _objectFoundInArea = Physics.SphereCast(transform.position, rayCastSphereRadius, transform.up, out _hit, range);
         
-        if (objectFoundInArea && canErupt) {
-            if (hit.collider.gameObject.CompareTag("Player")) {
-                hit.rigidbody.AddForce(transform.up * geiserForce, ForceMode.Force);
+        if (_objectFoundInArea && _canErupt) {
+            if (_hit.collider.gameObject.CompareTag("Player")) {
+                _hit.rigidbody.AddForce(transform.up * geyserForce, ForceMode.Force);
             }
         }
     }
@@ -36,10 +30,13 @@ public class Geiser : MonoBehaviour {
     private IEnumerator Eruption() {
         while (true) {
             bubbles.Play();
-            canErupt = true;
+            _canErupt = true;
+            
             yield return new WaitForSeconds(eruptionDuration);
+            
             bubbles.Stop();
-            canErupt = false;
+            _canErupt = false;
+            
             yield return new WaitForSeconds(reposeInterval);
         }
     }
@@ -47,6 +44,6 @@ public class Geiser : MonoBehaviour {
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, transform.up * range);
-        Gizmos.DrawWireSphere(transform.position + transform.up * hit.distance, rayCastSphereRadius);
+        Gizmos.DrawWireSphere(transform.position + transform.up * _hit.distance, rayCastSphereRadius);
     }
 }
