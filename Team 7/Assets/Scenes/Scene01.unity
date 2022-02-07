@@ -10309,10 +10309,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1850250586, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850250596, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1850250596, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: teleportOrb
       value: 
       objectReference: {fileID: 775457358}
+    - target: {fileID: 1850250597, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1850250597, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: redPortal
       value: 
@@ -10329,6 +10341,10 @@ PrefabInstance:
       propertyPath: deathMessage
       value: 
       objectReference: {fileID: 852540965}
+    - target: {fileID: 1369681903202269314, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2681273689579087495, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -10373,6 +10389,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2681273689579087496, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681273689579087497, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2681273689579087497, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
       propertyPath: maxTimeSinceGrounded
       value: 0.2
@@ -10381,8 +10405,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4706276071829231908, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655846176048482793, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7667529018608454882, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
+    - {fileID: 8277918752810159727, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6fb2ea29da97dc44fa34628b17abe3d4, type: 3}
 --- !u!1001 &8128044464950222811
 PrefabInstance:
