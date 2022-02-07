@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class Geiser : MonoBehaviour {
     [SerializeField] private float rayCastSphereRadius = 3f;
+    [SerializeField] private float range = 10f;
     [SerializeField] private float geiserForce = 220f;
     [SerializeField] private float eruptionDuration = 2.5f;
     [SerializeField] private float reposeInterval = 2f;
 
     [SerializeField] private ParticleSystem bubbles;
-    private float powerRange = 10f;
     
     
     private bool canErupt = true;
@@ -24,7 +24,7 @@ public class Geiser : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        objectFoundInArea = Physics.SphereCast(transform.position, rayCastSphereRadius, transform.up, out hit, powerRange);
+        objectFoundInArea = Physics.SphereCast(transform.position, rayCastSphereRadius, transform.up, out hit, range);
         
         if (objectFoundInArea && canErupt) {
             if (hit.collider.gameObject.CompareTag("Player")) {
@@ -46,7 +46,7 @@ public class Geiser : MonoBehaviour {
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.up * powerRange);
+        Gizmos.DrawRay(transform.position, transform.up * range);
         Gizmos.DrawWireSphere(transform.position + transform.up * hit.distance, rayCastSphereRadius);
     }
 }
