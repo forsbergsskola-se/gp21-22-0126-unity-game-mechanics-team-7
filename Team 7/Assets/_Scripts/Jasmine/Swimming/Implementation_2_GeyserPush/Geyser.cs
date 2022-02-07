@@ -9,9 +9,10 @@ public class Geyser : MonoBehaviour {
     [SerializeField] private float reposeInterval = 2f;
     [SerializeField] private ParticleSystem bubbles;
 
+    private RaycastHit _hit;
+    
     private bool _canErupt = true;
     private bool _objectFoundInArea;
-    private RaycastHit _hit;
 
     private void Start() {
         StartCoroutine(Eruption());
@@ -21,9 +22,7 @@ public class Geyser : MonoBehaviour {
         _objectFoundInArea = Physics.SphereCast(transform.position, rayCastSphereRadius, transform.up, out _hit, range);
         
         if (_objectFoundInArea && _canErupt) {
-            if (_hit.collider.gameObject.CompareTag("Player")) {
-                _hit.rigidbody.AddForce(transform.up * geyserForce, ForceMode.Force);
-            }
+            _hit.rigidbody.AddForce(transform.up * geyserForce, ForceMode.Force);
         }
     }
 

@@ -12,12 +12,12 @@ public class SwimShark : MonoBehaviour {
     private Rigidbody _rigidbody;
     private Vector3 _targetPosition;
     
-    private int destPointIndex = 0;
+    private int _destPointIndex = 0;
     private float pointReachDistance = 3;
-    private bool pointReached;
+    private bool _pointReached;
     
     private void Start() {
-        _targetPosition = patrolPoints[destPointIndex].currentPosition;
+        _targetPosition = patrolPoints[_destPointIndex].currentPosition;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -34,14 +34,14 @@ public class SwimShark : MonoBehaviour {
         var distanceToPoint = Vector3.Distance(transform.position, _targetPosition);
 
         if (distanceToPoint < pointReachDistance) {
-            pointReached = true;
+            _pointReached = true;
         }
         
-        if (pointReached) {
+        if (_pointReached) {
             NextPatrolPoint();
         }
 
-        pointReached = false;
+        _pointReached = false;
     }
 
     private void SwimToPoint() {
@@ -63,9 +63,9 @@ public class SwimShark : MonoBehaviour {
             return;
 
         // Sets the target position
-        _targetPosition = patrolPoints[destPointIndex].currentPosition;
+        _targetPosition = patrolPoints[_destPointIndex].currentPosition;
 
         // Choose the next point in the array as the target position,
-        destPointIndex = (destPointIndex + 1) % patrolPoints.Length;
+        _destPointIndex = (_destPointIndex + 1) % patrolPoints.Length;
     }
 }
