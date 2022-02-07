@@ -12,6 +12,7 @@ public class FlightContollerBT : MonoBehaviour {
 	private new Rigidbody rigidbody;
 	private Vector3 angleVeloctiy;
 	private Animator anim;
+	private bool canFlap = true;
 	
 	private EventInstance instance;
 	[SerializeField] private FMODUnity.EventReference fmodEvent;
@@ -47,11 +48,19 @@ public class FlightContollerBT : MonoBehaviour {
 		if (commandContainer.flyCommand > 0) {
 			// Plays flying animation.
 			anim.SetBool("jump", true);
+			if (canFlap) {
+				FMODUnity.RuntimeManager.PlayOneShot("event:/PLAYER/Wing flapping", transform.position);
+				canFlap = false;
+				StartCoroutine(DelayFlap());
+			}
 		}
 	}
 	private void PlaySound(float velocity) {
 		instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
 		instance.setParameterByName("velosety",Mathf.Clamp(velocity * 10, 0,100));
-		Debug.Log(Mathf.Clamp(velocity * 10, 0,100));
+	}
+	private IEnumerator DelayFlap() {
+		yield return new WaitForSeconds(0.2f);
+		canFlap = true;
 	}
 }

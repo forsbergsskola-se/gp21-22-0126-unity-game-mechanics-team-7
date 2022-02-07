@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class WalkController : MonoBehaviour {
@@ -7,6 +8,7 @@ public class WalkController : MonoBehaviour {
 	private new Rigidbody rigidbody;
 	private Animator anim;
 	private bool isLookingRight;
+	private bool canRun = true;
 	
 	private void Start() {
 		rigidbody = GetComponent<Rigidbody>();
@@ -19,6 +21,15 @@ public class WalkController : MonoBehaviour {
 		RotateWhenMoving();
 		// Sets animation to walk only when moving.
 		anim.SetInteger("Walk", rigidbody.velocity.x != 0 ? 1 : 0);
+		if (canRun && rigidbody.velocity.magnitude > 0.2f) {
+			FMODUnity.RuntimeManager.PlayOneShot("event:/PLAYER/Running",transform.position);
+			canRun = false;
+			StartCoroutine(DelayRun());
+		}
+	}
+	private IEnumerator DelayRun() {
+		yield return new WaitForSeconds(0.5f);
+		canRun = true;
 	}
 
 	void RotateWhenMoving(){
