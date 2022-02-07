@@ -858,14 +858,14 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -731260177
-      Data2: 1284319091
-      Data3: -164018266
-      Data4: 1629777719
-    Path: event:/MUSIC/Game
+      Data1: 558301145
+      Data2: 1282239335
+      Data3: 931278753
+      Data4: -428744391
+    Path: event:/MUSIC/MainMenu
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
