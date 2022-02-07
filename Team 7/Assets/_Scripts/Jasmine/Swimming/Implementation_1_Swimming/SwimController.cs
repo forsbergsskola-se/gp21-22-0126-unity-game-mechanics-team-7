@@ -26,6 +26,8 @@ public class SwimController : MonoBehaviour {
 
     private void Swim() {
         var velocity = _rigidbody.velocity;
+        
+        //Testa här om de går att ha på samma rad kod
         velocity = new Vector3(commandContainer.swimCommandVertical * swimVerticalSpeed, velocity.y, 0);
         velocity = new Vector3(commandContainer.swimCommandHorizontal * swimHorizontalSpeed, velocity.x, 0);
         

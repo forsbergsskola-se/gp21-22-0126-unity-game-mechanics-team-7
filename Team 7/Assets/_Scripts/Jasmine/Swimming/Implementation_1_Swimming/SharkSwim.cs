@@ -17,7 +17,7 @@ public class SharkSwim : MonoBehaviour {
     private bool pointReached;
     
     private void Start() {
-        _targetPosition = patrolPoints[0].currentPosition;
+        _targetPosition = patrolPoints[destPointIndex].currentPosition;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -38,7 +38,7 @@ public class SharkSwim : MonoBehaviour {
         }
         
         if (pointReached) {
-            SwimToNextPatrolPoint();
+            NextPatrolPoint();
         }
 
         pointReached = false;
@@ -46,17 +46,18 @@ public class SharkSwim : MonoBehaviour {
 
     private void SwimToPoint() {
         Vector3 vectorDistance = _targetPosition - transform.position;
-        Debug.Log(vectorDistance);
 
         if (vectorDistance.x <= 0) {
+            transform.rotation = Quaternion.Euler(0, -90, 0);
             _rigidbody.velocity = new Vector3(_targetPosition.x * -swimSpeed, _rigidbody.velocity.y, 0);
 
-        } else{
+        } else {
+            transform.rotation = Quaternion.Euler(0, 90, 0);
             _rigidbody.velocity = new Vector3(_targetPosition.x * swimSpeed, _rigidbody.velocity.y, 0);
         }
     }
 
-    private void SwimToNextPatrolPoint() {
+    private void NextPatrolPoint() {
         // Returns if no points have been set up
         if (patrolPoints.Length == 0)
             return;
