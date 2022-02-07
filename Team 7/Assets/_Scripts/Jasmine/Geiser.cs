@@ -7,8 +7,12 @@ using UnityEngine;
 public class Geiser : MonoBehaviour {
     [SerializeField] private float rayCastSphereRadius = 3f;
     [SerializeField] private float geiserForce = 220f;
+    [SerializeField] private float eruptionDuration = 2.5f;
+    [SerializeField] private float reposeInterval = 2f;
+
     [SerializeField] private ParticleSystem bubbles;
     private float powerRange = 10f;
+    
     
     private bool canErupt = true;
     private bool objectFoundInArea;
@@ -33,10 +37,10 @@ public class Geiser : MonoBehaviour {
         while (true) {
             bubbles.Play();
             canErupt = true;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(eruptionDuration);
             bubbles.Stop();
             canErupt = false;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(reposeInterval);
         }
     }
 
