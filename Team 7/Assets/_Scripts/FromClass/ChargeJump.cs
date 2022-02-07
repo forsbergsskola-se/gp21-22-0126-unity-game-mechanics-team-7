@@ -35,6 +35,7 @@ public class ChargeJump : MonoBehaviour
             timeSinceGrounded = 0;
             var jumpForce = Mathf.Lerp(minimumJumpForce, maximumJumpForce, jumpCharge);
             rigidbody.AddForce(Vector3.up * jumpForce);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/PLAYER/Jumping", transform.position);
             jumpCharge = 0f;
             // Plays jump animation.
             anim.SetBool("jump", true);
