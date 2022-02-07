@@ -35,16 +35,15 @@
      - AI:
 ### Oliver Källerfors
 - Mechanic: 
-  - Implementation 1:  
-  - Implmentation 2:
-- AI 1: 
-  - X
-     - Mechanic Used: 
-     - AI:
-- AI 2: 
-   - X
-     - Mechanic Used:
-     - AI:
+  - Implementation 1: Portal Gun: When portal gun acquired, Left/Right click to shoot a portal to target location which allows you to move from one portal to another.
+  - Implmentation 2: Teleport Behind Target: Press E to Teleport behind enemy infront of you and turn so you look at the enemy.
+  - Implementation 3: Charged Orb Teleport: Press Shift to summon a teleportation orb and hold down the button to make the orb move in your direction, then when you let go of Shift you teleport to that location.
+- AI 1: Ghost Penguin
+  - Slowly Follows the player and kills on touch
+     - Mechanic Used: Follow Target(Oliver), Kill Target(Ben)
+- AI 2: Lion
+  - Follows player when in range and tries to pounce behind them and kill the player.
+     - Mechanic Used: Teleport Behind Target(Oliver), Follow target(Oliver), Kill Target(Ben)
 ### Sara Saber
 - Mechanic: 
   - Implementation 1:  
