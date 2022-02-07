@@ -6,8 +6,7 @@ using UnityEngine.Events;
 using Random = System.Random;
 
 public class SharkSwim : MonoBehaviour {
-    [SerializeField] private float swimHorizontalSpeed;
-    [SerializeField] private float swimVerticalSpeed;
+    [SerializeField] private float swimSpeed = 4;
     [SerializeField] private PositionSO[] patrolPoints;
     
     private Rigidbody _rigidbody;
@@ -50,10 +49,10 @@ public class SharkSwim : MonoBehaviour {
         Debug.Log(vectorDistance);
 
         if (vectorDistance.x <= 0) {
-            _rigidbody.velocity = new Vector3(_targetPosition.x * -swimHorizontalSpeed, _rigidbody.velocity.y, 0);
+            _rigidbody.velocity = new Vector3(_targetPosition.x * -swimSpeed, _rigidbody.velocity.y, 0);
 
         } else{
-            _rigidbody.velocity = new Vector3(_targetPosition.x * swimHorizontalSpeed, _rigidbody.velocity.y, 0);
+            _rigidbody.velocity = new Vector3(_targetPosition.x * swimSpeed, _rigidbody.velocity.y, 0);
         }
     }
 
@@ -62,25 +61,10 @@ public class SharkSwim : MonoBehaviour {
         if (patrolPoints.Length == 0)
             return;
 
-        // Set the agent to go to the currently selected destination.
+        // Sets the target position
         _targetPosition = patrolPoints[destPointIndex].currentPosition;
 
-        // Choose the next point in the array as the destination,
-        // cycling to the start if necessary.
+        // Choose the next point in the array as the target position,
         destPointIndex = (destPointIndex + 1) % patrolPoints.Length;
     }
-
-    /*private void Start() {
-        _rigidbody = GetComponent<Rigidbody>();
-    }
-
-    private void Update() {
-        SwimPatrol();
-    }
-
-    private void SwimPatrol() {
-        var velocity = _rigidbody.velocity;
-        var targetPoint = RandomizeNextPoint();
-        Vector3.Lerp(transform.position, targetPoint, 5);
-    }*/
 }
