@@ -15,6 +15,7 @@ public class Death : MonoBehaviour {
 			transform.Translate(0, 2 * Time.deltaTime, -10 * Time.deltaTime);
 			deathMessage.SetActive(true);
 			if (!isShown) {
+				GetComponentInChildren<PlayerInputController>().enabled = false;
 				Instantiate(brokenHeart, transform.position, Quaternion.identity);
 				isShown = true;
 			}
