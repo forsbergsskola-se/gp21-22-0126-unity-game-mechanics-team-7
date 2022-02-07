@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = System.Random;
 
-public class SharkSwim : MonoBehaviour {
+public class SwimShark : MonoBehaviour {
     [SerializeField] private float swimSpeed = 4;
     [SerializeField] private PositionSO[] patrolPoints;
     
