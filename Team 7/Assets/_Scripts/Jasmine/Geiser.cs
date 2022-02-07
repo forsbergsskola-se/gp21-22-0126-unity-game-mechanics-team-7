@@ -6,29 +6,34 @@ using UnityEngine;
 
 public class Geiser : MonoBehaviour {
     [SerializeField] private float rayCastSphereRadius = 3f;
+    [SerializeField] private float geiserForce = 70f;
     private float powerRange = 10f;
-    private float geiserForce = 70f;
     
     private bool canErupt = true;
     private bool objectFoundInArea;
 
     private RaycastHit hit;
 
+    private void Start() {
+        StartCoroutine(GeiserActivity());
+    }
+
     private void FixedUpdate() {
         objectFoundInArea = Physics.SphereCast(transform.position, rayCastSphereRadius, transform.up, out hit, powerRange);
         
         if (objectFoundInArea && canErupt) {
             if (hit.collider.gameObject.CompareTag("Player")) {
-                hit.rigidbody.AddForce(transform.up * geiserForce, ForceMode.Impulse);
-                StartCoroutine(GeiserActivity());
+                hit.rigidbody.AddForce(transform.up * geiserForce, ForceMode.Force);
             }
         }
     }
 
     private IEnumerator GeiserActivity() {
         canErupt = false;
+        Debug.Log("Off");
         yield return new WaitForSeconds(2);
         canErupt = true;
+        Debug.Log("On");
     }
 
     private void OnDrawGizmos() {

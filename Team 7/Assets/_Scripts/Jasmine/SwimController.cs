@@ -31,7 +31,7 @@ public class SwimController : MonoBehaviour {
         
         FaceSwimmingDirection();
         _rigidbody.velocity = velocity;
-        
+
         anim.SetBool("jump", true);
     }
 
