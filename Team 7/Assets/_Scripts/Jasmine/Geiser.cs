@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Geiser : MonoBehaviour {
     [SerializeField] private float rayCastSphereRadius = 3f;
-    [SerializeField] private float geiserForce = 70f;
+    [SerializeField] private float geiserForce = 220f;
+    [SerializeField] private ParticleSystem bubbles;
     private float powerRange = 10f;
     
     private bool canErupt = true;
@@ -15,7 +16,7 @@ public class Geiser : MonoBehaviour {
     private RaycastHit hit;
 
     private void Start() {
-        StartCoroutine(GeiserActivity());
+        StartCoroutine(Eruption());
     }
 
     private void FixedUpdate() {
@@ -28,10 +29,15 @@ public class Geiser : MonoBehaviour {
         }
     }
 
-    private IEnumerator GeiserActivity() {
-        canErupt = false;
-        yield return new WaitForSeconds(2);
-        canErupt = true;
+    private IEnumerator Eruption() {
+        while (true) {
+            bubbles.Play();
+            canErupt = true;
+            yield return new WaitForSeconds(2);
+            bubbles.Stop();
+            canErupt = false;
+            yield return new WaitForSeconds(2);
+        }
     }
 
     private void OnDrawGizmos() {
