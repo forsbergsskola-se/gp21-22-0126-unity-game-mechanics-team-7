@@ -7,12 +7,10 @@ using Random = System.Random;
 public class SwimBabyPenguin : MonoBehaviour {
     [SerializeField] private PositionSO playerPosition;
     [SerializeField] private float sightLength = 5;
-    [SerializeField] private float swimSpeed;
     
     private CommandContainer _commandContainer;
     private Vector3 _followOffset = new Vector3(2, 2);
 
-    private Random _random = new Random();
     private bool _playerFound;
 
     private void Start() {
