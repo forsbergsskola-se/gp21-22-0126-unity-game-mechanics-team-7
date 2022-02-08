@@ -20,14 +20,9 @@ public class AIJumpingBT : MonoBehaviour
         if (Physics.Raycast(ray, sightRange,playerAbove)) {
             Jump();
         }
-
-        // var distanceToPlayer = Vector3.Distance(targetPosition.currentPosition, transform.position);
-        // Debug.Log(distanceToPlayer);
-        // if (distanceToPlayer < sightRange) {
-        //     Jump();
-        // }
     }
     private void Jump() {
         commandContainer.jumpCommandDown = true;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/ENVIRONMENT/Cat", transform.position);
     }
 }

@@ -4914,6 +4914,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1047710391}
     m_Modifications:
+    - target: {fileID: 2914799341106447058, guid: 9b0eb339739532249a955099caf86094, type: 3}
+      propertyPath: sightRange
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3476821740179534768, guid: 9b0eb339739532249a955099caf86094, type: 3}
       propertyPath: m_Name
       value: Cat (1)
@@ -57145,6 +57149,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1047710391}
     m_Modifications:
+    - target: {fileID: 2914799341106447058, guid: 9b0eb339739532249a955099caf86094, type: 3}
+      propertyPath: sightRange
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3476821740179534768, guid: 9b0eb339739532249a955099caf86094, type: 3}
       propertyPath: m_Name
       value: Cat
