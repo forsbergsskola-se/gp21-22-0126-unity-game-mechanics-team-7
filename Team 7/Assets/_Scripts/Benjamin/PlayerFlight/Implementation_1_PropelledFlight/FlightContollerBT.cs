@@ -22,8 +22,9 @@ public class FlightContollerBT : MonoBehaviour {
 		commandContainer = GetComponentInChildren<CommandContainer>();
 		anim = GetComponentInChildren<Animator>();
 		hoverControllerBT = GetComponent<HoverControllerBT>();
-		
+
 		instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+		instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
 		instance.start();
 	}
 	private void Update() {
