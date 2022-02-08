@@ -3294,7 +3294,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: -1.8392736e+12, z: 5.66e-43, w: -1.4767515e+12}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -4792,7 +4792,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10479,7 +10479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1279476498, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -903.49
+      value: -902.75
       objectReference: {fileID: 0}
     - target: {fileID: 1279476498, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10504,11 +10504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2037102235, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 10.1287
+      value: 11.1977
       objectReference: {fileID: 0}
     - target: {fileID: 2037102235, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1.7397461
+      value: 1.7397
       objectReference: {fileID: 0}
     - target: {fileID: 2037102235, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_LocalScale.x
@@ -10524,19 +10524,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2037102235, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -903.28
+      value: -902.75
       objectReference: {fileID: 0}
     - target: {fileID: 2037102235, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -532.91
+      value: -532.82
       objectReference: {fileID: 0}
     - target: {fileID: 2037102236, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_text
-      value: 'Hold SHIFT to use your TELEPORT ORB and FLEE! '
+      value: 'Hold SHIFT to LAUCH A TELEPORT ORB.
+
+        RELEASE to TELEPORT to
+        its position'
       objectReference: {fileID: 0}
     - target: {fileID: 2037102236, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_fontSize
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3387367811111068803, guid: b05a73982f51e6e4b9325b470fafa245, type: 3}
       propertyPath: m_text
