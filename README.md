@@ -2,7 +2,6 @@
 - Benjamin Ting
 - Jasmine Öhlin
 - Oliver Källerfors
-- Sara Saber
 
 ## Sound & Music
 - Troy Davis
@@ -40,13 +39,3 @@
 - AI 2: Lion
   - Follows player when in range and tries to pounce behind them and kill the player.
      - Mechanics Used: Teleport Behind Target(Oliver), Follow target(Oliver), Kill Target(Ben)
-### Sara Saber
-- Mechanic: 
-  - Implementation 1:  
-  - Implmentation 2:
-- AI 1: 
-  - X
-     - Mechanics Used: 
-- AI 2: 
-   - X
-     - Mechanics Used:
