@@ -1,15 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 public class SwimController : MonoBehaviour {
     [SerializeField] private float swimHorizontalSpeed;
     [SerializeField] private float swimVerticalSpeed;
-    private Animator anim;
-
+    
+    private Animator _animator;
     private Rigidbody _rigidbody;
     private CommandContainer _commandContainer;
     
@@ -18,7 +13,7 @@ public class SwimController : MonoBehaviour {
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
         _commandContainer = GetComponentInChildren<CommandContainer>();
-        anim = GetComponentInChildren<Animator>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate() {
@@ -26,19 +21,23 @@ public class SwimController : MonoBehaviour {
     }
 
     private void Swim() {
-        
-        //Testa här om de går att ha på samma rad kod
+        //Moves depending on the vertical and horizontal input from player
         _rigidbody.velocity = new Vector3(_commandContainer.swimCommandHorizontal * swimHorizontalSpeed, _commandContainer.swimCommandVertical * swimVerticalSpeed, 0);
         
         FaceSwimmingDirection();
 
-        anim.SetBool("jump", true);
+        //Jump animation is used for swimming since we don't have a swimming animation
+        _animator.SetBool("jump", true);
     }
 
     private void FaceSwimmingDirection() {
-        float targetAngle = Mathf.Atan2(_commandContainer.swimCommandVertical, _commandContainer.swimCommandHorizontal) * Mathf.Rad2Deg;
+        //Gets the angle from inputs
+        var targetAngle = Mathf.Atan2(_commandContainer.swimCommandVertical, _commandContainer.swimCommandHorizontal) * Mathf.Rad2Deg;
+        
+        //Lerps from current angle to target angle
         _currentAngle = Mathf.LerpAngle(targetAngle, _currentAngle, Time.deltaTime);
 
+        //If there are no inputs player stands vertical
         if (_commandContainer.swimCommandHorizontal != 0 || _commandContainer.swimCommandVertical != 0) {
             transform.rotation = Quaternion.Euler(-_currentAngle + 90, 90, 0);
         }
