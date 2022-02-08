@@ -1,19 +1,23 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using Random = System.Random;
 
 public class SwimShark : MonoBehaviour {
     [SerializeField] private float swimSpeed = 4;
     [SerializeField] private PositionSO[] patrolPoints;
     
     private Rigidbody _rigidbody;
-    private Vector3 _targetPointPosition;
+    private Vector3 _targetPosition;
     
     private int _destPointIndex = 0;
-    private float _reachDistance = 3;
+    private float pointReachDistance = 3;
     private bool _pointReached;
     
     private void Start() {
-        //Sets the target position to the patrol point of index 0
-        _targetPointPosition = patrolPoints[_destPointIndex].currentPosition;
+        _targetPosition = patrolPoints[_destPointIndex].currentPosition;
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -27,10 +31,9 @@ public class SwimShark : MonoBehaviour {
     }
 
     private void DecidePoint() {
-        var distanceToPoint = Vector3.Distance(transform.position, _targetPointPosition);
+        var distanceToPoint = Vector3.Distance(transform.position, _targetPosition);
 
-        //If close enough to target point position
-        if (distanceToPoint < _reachDistance) {
+        if (distanceToPoint < pointReachDistance) {
             _pointReached = true;
         }
         
@@ -42,29 +45,27 @@ public class SwimShark : MonoBehaviour {
     }
 
     private void SwimToPoint() {
-        Vector3 vectorDistance = _targetPointPosition - transform.position;
+        Vector3 vectorDistance = _targetPosition - transform.position;
 
-        //Turns the shark to the swim direction and sets velocity towards the target point position
         if (vectorDistance.x <= 0) {
             transform.rotation = Quaternion.Euler(0, -90, 0);
-            _rigidbody.velocity = new Vector3(_targetPointPosition.x * -swimSpeed, _rigidbody.velocity.y, 0);
+            _rigidbody.velocity = new Vector3(_targetPosition.x * -swimSpeed, _rigidbody.velocity.y, 0);
 
         } else {
             transform.rotation = Quaternion.Euler(0, 90, 0);
-            _rigidbody.velocity = new Vector3(_targetPointPosition.x * swimSpeed, _rigidbody.velocity.y, 0);
+            _rigidbody.velocity = new Vector3(_targetPosition.x * swimSpeed, _rigidbody.velocity.y, 0);
         }
     }
 
     private void NextPatrolPoint() {
-        //Returns if no points have been set up in inspector
-        if (patrolPoints.Length == 0) {
+        // Returns if no points have been set up
+        if (patrolPoints.Length == 0)
             return;
-        }
 
-        //Sets the target point position
-        _targetPointPosition = patrolPoints[_destPointIndex].currentPosition;
+        // Sets the target position
+        _targetPosition = patrolPoints[_destPointIndex].currentPosition;
 
-        //Choose the next point in the array as the next target point position
+        // Choose the next point in the array as the target position,
         _destPointIndex = (_destPointIndex + 1) % patrolPoints.Length;
     }
 }
