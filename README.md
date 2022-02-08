@@ -20,9 +20,9 @@
    - Detects when the player is directly above it and jumps vertically upwards.
      - Mechanics Used: Immedate Jump(from class), Kill Target(Ben)
 ### Jasmine Öhlin
-- Mechanic: 
-  - Implementation 1: Swimming. W swims up, A swims left, D swims right, S swims down. They can be combinated. Showcased in Level 2.
-  - Implmentation 2: Geysers adds a push to swimming player. Showcased in Level 2.
+- Mechanic: Swimming
+  - Implementation 1: Regular swimming. W swims up, A swims left, D swims right, S swims down. They can be combinated. Showcased in Level 2.
+  - Implmentation 2: Geysers automatically adds a push to swimming player, if within range, during it's eruption. Showcased in Level 2.
 - AI 1: Baby Penguin
   - Follows player after being "picked up" (swammed over). Needs help getting passed the shark and will die if collision with shark occurs.
      - Mechanics Used: Swimming(Jasmine) and affected by geyser push.
