@@ -22,12 +22,12 @@
 ### Jasmine Öhlin
 - Mechanic: Swimming
   - Implementation 1: Regular swimming. W swims up, A swims left, D swims right, S swims down. They can be combinated. Showcased in Level 2.
-  - Implmentation 2: Geysers automatically adds a push to swimming player, if within range, during it's eruption. Showcased in Level 2.
+  - Implementation 2: Geysers automatically adds a push to swimming player, if within range, during it's eruption. Showcased in Level 2.
 - AI 1: Baby Penguin
   - Follows player after being "picked up" (swammed over). Needs help getting passed the shark and will die if collision with shark occurs.
      - Mechanics Used: Swimming(Jasmine) and affected by geyser push.
 - AI 2: Shark
-   - Patrols area between two points, only swim horizontal. Kills player and baby penguin on collision.
+   - Patrols area between two points, only swims horizontal. Kills player and baby penguin on collision.
      - Mechanics Used: Swimming(Jasmine), Kill Target(Ben)
 ### Oliver Källerfors
 - Mechanic: Teleportation
