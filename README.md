@@ -20,15 +20,15 @@
    - Detects when the player is directly above it and jumps vertically upwards.
      - Mechanics Used: Immedate Jump(from class), Kill Target(Ben)
 ### Jasmine Öhlin
-- Mechanic: 
-  - Implementation 1:  
-  - Implmentation 2:
-- AI 1: 
-  - X
-     - Mechanics Used: 
-- AI 2: 
-   - X
-     - Mechanics Used:
+- Mechanic: Swimming
+  - Implementation 1: Regular swimming. W swims up, A swims left, D swims right, S swims down. They can be combinated. Showcased in Level 2.
+  - Implementation 2: Geysers automatically adds a push to swimming player, if within range, during it's eruption. Showcased in Level 2.
+- AI 1: Baby Penguin
+  - Follows player after being "picked up" (swammed over). Needs help getting passed the shark and will die if collision with shark occurs.
+     - Mechanics Used: Swimming(Jasmine) and affected by geyser push.
+- AI 2: Shark
+   - Patrols area between two points, only swims horizontal. Kills player and baby penguin on collision.
+     - Mechanics Used: Swimming(Jasmine), Kill Target(Ben)
 ### Oliver Källerfors
 - Mechanic: Teleportation
   - Implementation 1: Portal Gun: When portal gun acquired, Left/Right click to shoot a portal to target location which allows you to move from one portal to another.
