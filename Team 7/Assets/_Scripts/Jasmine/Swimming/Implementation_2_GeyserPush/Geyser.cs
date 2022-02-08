@@ -19,18 +19,15 @@ public class Geyser : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        //Checks for objects
         _objectFoundInArea = Physics.SphereCast(transform.position, rayCastSphereRadius, transform.up, out _hit, range);
         
         if (_objectFoundInArea && _canErupt) {
-            //Adds force to rigidbodies in the sphere cast
             if (_hit.rigidbody != null) {
                 _hit.rigidbody.AddForce(transform.up * geyserForce, ForceMode.Force);
             }
         }
     }
 
-    //Method that handles the eruption cycle, eruption cycle is always active
     private IEnumerator Eruption() {
         while (true) {
             bubbles.Play();
@@ -44,7 +41,7 @@ public class Geyser : MonoBehaviour {
             yield return new WaitForSeconds(reposeInterval);
         }
     }
-    
+
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, transform.up * range);
