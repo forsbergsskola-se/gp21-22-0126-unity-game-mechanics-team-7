@@ -22,7 +22,9 @@ public class Geyser : MonoBehaviour {
         _objectFoundInArea = Physics.SphereCast(transform.position, rayCastSphereRadius, transform.up, out _hit, range);
         
         if (_objectFoundInArea && _canErupt) {
-            _hit.rigidbody.AddForce(transform.up * geyserForce, ForceMode.Force);
+            if (_hit.rigidbody != null) {
+                _hit.rigidbody.AddForce(transform.up * geyserForce, ForceMode.Force);
+            }
         }
     }
 
