@@ -10,17 +10,13 @@ public class SwimBabyPenguin : MonoBehaviour {
     [SerializeField] private float swimSpeed;
     
     private CommandContainer _commandContainer;
-    private Rigidbody _rigidbody;
-    private Animator _animator;
     private Vector3 _followOffset = new Vector3(2, 2);
 
     private Random _random = new Random();
     private bool _playerFound;
 
     private void Start() {
-        _commandContainer = GetComponentInChildren<CommandContainer>();
-        _animator = GetComponent<Animator>();
-        _rigidbody = GetComponent<Rigidbody>();
+        _commandContainer = GetComponent<CommandContainer>();
     }
 
     private void Update() {
@@ -36,10 +32,9 @@ public class SwimBabyPenguin : MonoBehaviour {
     }
 
     private void SwimAfterPlayer() {
-        _animator.SetBool("jump", true);
-        Vector3 direction = playerPosition.currentPosition - transform.position;
-        _rigidbody.velocity = direction.normalized * swimSpeed;
-        //_rigidbody.MovePosition(transform.position + direction * Time.deltaTime * swimSpeed);
+        var directionToPlayer = Vector3.Normalize(playerPosition.currentPosition - transform.position);
+        _commandContainer.swimCommandHorizontal = directionToPlayer.x;
+        _commandContainer.swimCommandVertical = directionToPlayer.y;
     }
 
     private void LookForPlayer() {

@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class SwimController : MonoBehaviour {
     [SerializeField] private float swimHorizontalSpeed;
     [SerializeField] private float swimVerticalSpeed;
-    [SerializeField] private Animator anim;
+    private Animator anim;
 
     private Rigidbody _rigidbody;
     private CommandContainer _commandContainer;
@@ -18,6 +18,7 @@ public class SwimController : MonoBehaviour {
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
         _commandContainer = GetComponentInChildren<CommandContainer>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate() {
@@ -25,14 +26,11 @@ public class SwimController : MonoBehaviour {
     }
 
     private void Swim() {
-        var velocity = _rigidbody.velocity;
         
         //Testa här om de går att ha på samma rad kod
-        velocity = new Vector3(_commandContainer.swimCommandVertical * swimVerticalSpeed, velocity.y, 0);
-        velocity = new Vector3(_commandContainer.swimCommandHorizontal * swimHorizontalSpeed, velocity.x, 0);
+        _rigidbody.velocity = new Vector3(_commandContainer.swimCommandHorizontal * swimHorizontalSpeed, _commandContainer.swimCommandVertical * swimVerticalSpeed, 0);
         
         FaceSwimmingDirection();
-        _rigidbody.velocity = velocity;
 
         anim.SetBool("jump", true);
     }
