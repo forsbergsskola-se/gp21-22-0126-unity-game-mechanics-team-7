@@ -13,9 +13,9 @@ public class Portal : MonoBehaviour{
 
     void OnTriggerEnter(Collider other){
         if (oppositePortal.isActive && thisPortal.isActive){
-            // FMODUnity.RuntimeManager.PlayOneShot("event:/PORTALS/PortalBlue");
-            other.gameObject.transform.position = oppositePortal.portalPosition.currentPosition; 
-           StartCoroutine(PortalCooldown());
+            other.gameObject.transform.position = oppositePortal.portalPosition.currentPosition;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/PORTALS/Portal", thisPortal.portalPosition.currentPosition);
+            StartCoroutine(PortalCooldown());
         }
     }
 

@@ -3294,7 +3294,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.767268e+11, y: 7.067996e+28, z: 1.7847216e+31, w: 1.050548e-38}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3659,7 +3659,6 @@ GameObject:
   - component: {fileID: 802741290}
   - component: {fileID: 802741289}
   - component: {fileID: 802741293}
-  - component: {fileID: 802741294}
   m_Layer: 2
   m_Name: Blue Portal
   m_TagString: Untagged
@@ -3762,36 +3761,6 @@ MonoBehaviour:
   oppositePortal: {fileID: 11400000, guid: f8d1b441865b4ef4e9cae12a8562d6c4, type: 2}
   thisPortal: {fileID: 11400000, guid: 90482ad4e1209f440bf016573d366099, type: 2}
   portalCooldown: 0.1
---- !u!114 &802741294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802741287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Player
-  EventReference:
-    Guid:
-      Data1: -1100428792
-      Data2: 1306782822
-      Data3: 559379600
-      Data4: 896478130
-    Path: event:/PORTALS/PortalBlue
-  Event: 
-  PlayEvent: 3
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1001 &808271151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3862,7 +3831,6 @@ GameObject:
   - component: {fileID: 811024773}
   - component: {fileID: 811024772}
   - component: {fileID: 811024776}
-  - component: {fileID: 811024777}
   m_Layer: 2
   m_Name: Red Portal
   m_TagString: Untagged
@@ -3965,36 +3933,6 @@ MonoBehaviour:
   oppositePortal: {fileID: 11400000, guid: 90482ad4e1209f440bf016573d366099, type: 2}
   thisPortal: {fileID: 11400000, guid: f8d1b441865b4ef4e9cae12a8562d6c4, type: 2}
   portalCooldown: 0.1
---- !u!114 &811024777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811024770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
 --- !u!1 &835296783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4997,7 +4935,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
