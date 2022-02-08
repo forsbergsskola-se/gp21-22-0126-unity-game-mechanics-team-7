@@ -31885,6 +31885,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &1144744338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474102626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce787f0a821a3d4195bb65494db468c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+  brokenHeart: {fileID: 2493080065289976923, guid: d193cab89889ae9458e33d6e5925b42b, type: 3}
+  deathMessage: {fileID: 2053713263}
 --- !u!1 &1147366413
 GameObject:
   m_ObjectHideFlags: 0
